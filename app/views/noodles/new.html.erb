@@ -1,6 +1,23 @@
-<div id="new">
-  <input type="file" v-on:change="handlecahnge" />
-  <div v-if="preview">
-    <img v-bind:src="preview" class="new-image"/>
-  </div>
+<div id="new" class="new">
+  <form >
+    <label>
+      <i class="fas fa-image"></i>
+      <input type="file" v-on:change="handlecahnge" class="hidden"/>
+    </label>
+    <label><input type="radio"name="genre" value="1"/>豚骨</label>
+    <label><input type="radio"name="genre" value="2"/>醤油</label>
+    <label><input type="radio"name="genre" value="3"/>みそ</label>
+    <label><input type="radio"name="genre" value="4"/>鶏白湯</label>
+    <label><input type="radio"name="genre" value="5"/>二郎</label>
+    <label><input type="radio"name="genre" value="6"/>その他</label>
+    <div v-if="preview">
+      <img v-bind:src="preview" class="new-image"/>
+    </div>
+    <label >
+      <textarea name="kanso" rows="4" cols="40"></textarea>
+    </label>
+
+  </form>
 </div>
+
+<<button type=" " name="button" class="btn btn-success"></button>
