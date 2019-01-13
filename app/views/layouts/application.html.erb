@@ -4,14 +4,12 @@
     <title>Noodle</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   </head>
 
   <body>
     <%= yield %>
-    <p>pullすると表示されるよ</p>
-    <p>これでいいんかな？</p>
   </body>
 </html>
