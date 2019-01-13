@@ -5,11 +5,10 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  </head>
-
+    </head>
   <body>
     <%= yield %>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </body>
 </html>
