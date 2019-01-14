@@ -9,7 +9,7 @@
     display: none;
   }
   .new-image{
-    width: 100%;
+    width: 70%;
   }
   .new-select{
   	input{
@@ -40,19 +40,26 @@
   }
   .ramen-image{
     position: relative;
-    h2{
+    margin-bottom: 20px;
+    .ramen-image-title{
       position: absolute;
       color: white;
-      top: 0;
-      left: 0;
+      top: 10px;
+      left: 20px;
+    }
+    .ramen-image-genre{
+      position: absolute;
+      color: #fff;
+      bottom: 10px;
+      left: 20px;
     }
   }
-  textarea{
+  .review{
+    border-radius: 20px;
     width: 100%;
   }
   .btn-ramen{
     background-color: rgba(238, 29, 36, 0.7);
-    text-align: center;
     color: #fff;
   }
 }
