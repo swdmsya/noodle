@@ -1,23 +1,40 @@
-<div id="new" class="new">
+<div id="new" class="new container">
   <form >
     <label>
       <i class="fas fa-image"></i>
+      <p>画像を選択</p>
       <input type="file" v-on:change="handlecahnge" class="hidden"/>
     </label>
-    <label><input type="radio"name="genre" value="1"/>豚骨</label>
-    <label><input type="radio"name="genre" value="2"/>醤油</label>
-    <label><input type="radio"name="genre" value="3"/>みそ</label>
-    <label><input type="radio"name="genre" value="4"/>鶏白湯</label>
-    <label><input type="radio"name="genre" value="5"/>二郎</label>
-    <label><input type="radio"name="genre" value="6"/>その他</label>
-    <div v-if="preview">
-      <img v-bind:src="preview" class="new-image"/>
+    <div class="new-select">
+        <input type="radio" name="genre" id="select1" value="1" checked="" v-model="ragen">
+        <label for="select1">豚骨</label>
+        <input type="radio" name="genre" id="select2" value="2" v-model="ragen">
+        <label for="select2">家系</label>
+        <input type="radio" name="genre" id="select3" value="3" v-model="ragen">
+        <label for="select3">二郎</label>
+        <input type="radio" name="genre" id="select4" value="4" v-model="ragen">
+        <label for="select4">まぜそば</label>
+        <input type="radio" name="genre" id="select5" value="5" v-model="ragen">
+        <label for="select5">つけ麺</label>
+        <input type="radio" name="genre" id="select5" value="6" v-model="ragen">
+        <label for="select5">しょうゆ</label>
+        <input type="radio" name="genre" id="select5" value="7" v-model="ragen">
+        <label for="select5">味噌</label>
+        <input type="radio" name="genre" id="select5" value="8" v-model="ragen">
+        <label for="select5">その他</label>
     </div>
-    <label >
-      <textarea name="kanso" rows="4" cols="40"></textarea>
+    <label class="form-item">
+      <h2>ラーメン名</h2>
+      <input type="text" name="title" v-model="title">
     </label>
-
+    <div v-if="preview" class="ramen-image">
+      <img v-bind:src="preview" class="new-image img-rounded"/>
+      <h2>{{ title }}</h2>
+      <h4>{{ ragen }}</h4>
+    </div>
+    <label class = "form-item">
+      <textarea name="review" ></textarea>
+    </label>
+    <button type="submit" name="button" class="btn btn-ramen">投稿</button>
   </form>
 </div>
-
-<<button type=" " name="button" class="btn btn-success"></button>

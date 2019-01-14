@@ -1,7 +1,9 @@
 new Vue({
   el: '#new',
   data:{
-    preview: ''
+    preview: '',
+    title: '',
+    ragen: ''
   },
   methods: {
     handlecahnge: function(event){
