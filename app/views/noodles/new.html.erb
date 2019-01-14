@@ -1,0 +1,41 @@
+<div id="new" class="new container">
+  <form >
+    <label>
+      <i class="fas fa-image"></i>
+      <p>画像を選択</p>
+      <input type="file" v-on:change="handlecahnge" class="hidden"/>
+    </label>
+    <div class="new-select">
+        <input type="radio" name="genre" id="select1" value="豚骨" checked="" v-model="ragen">
+        <label for="select1">豚骨</label>
+        <input type="radio" name="genre" id="select2" value="家系" v-model="ragen">
+        <label for="select2">家系</label>
+        <input type="radio" name="genre" id="select3" value="二郎" v-model="ragen">
+        <label for="select3">二郎</label>
+        <input type="radio" name="genre" id="select4" value="まぜそば" v-model="ragen">
+        <label for="select4">まぜそば</label>
+        <input type="radio" name="genre" id="select5" value="つけ麺" v-model="ragen">
+        <label for="select5">つけ麺</label>
+        <input type="radio" name="genre" id="select6" value="醤油" v-model="ragen">
+        <label for="select6">しょうゆ</label>
+        <input type="radio" name="genre" id="select7" value="味噌" v-model="ragen">
+        <label for="select7">味噌</label>
+        <input type="radio" name="genre" id="select8" value="その他" v-model="ragen">
+        <label for="select8">その他</label>
+    </div>
+    <label class="form-item">
+      <h2>ラーメン名</h2>
+      <input type="text" name="title" v-model="title">
+    </label>
+    <div v-if="preview" class="ramen-image">
+      <img v-bind:src="preview" class="new-image img-rounded"/>
+      <h2 class="ramen-image-title">{{ title }}</h2>
+      <h3 class="ramen-image-genre">{{ ragen }}</h3>
+    </div>
+    <label class = "form-item">
+      <p>コメント</p>
+      <textarea name="review" class="review"></textarea>
+    </label>
+    <button type="submit" name="button" class="btn btn-ramen">投稿</button>
+  </form>
+</div>
