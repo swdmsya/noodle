@@ -1,6 +1,4 @@
 class NoodlesController < ApplicationController
-  def index
-  end
 
   def show
   end
