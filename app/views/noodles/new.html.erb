@@ -37,5 +37,16 @@
       <textarea name="review" class="review"></textarea>
     </label>
     <button type="submit" name="button" class="btn btn-ramen">投稿</button>
+    <textarea v-model="keyword"></textarea>
+      {{keyword}}
+    <p v-clock>
+      {{message}}
+    </p>
+    {{shops}}
+    <ul>
+      <li v-for="(name) in shops" v-cloak>
+          {{ shop }} 
+      </li>
+    </ul>
   </form>
 </div>
