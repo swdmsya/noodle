@@ -1,0 +1,86 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#show{
+/*----------------header-------------------*/
+  .container-fluid{
+  background-color:red
+  }
+  .header-height{
+    height:80px;
+    position:fixed;
+    width:100%;
+    z-index: 1;
+  }
+  .user_info{
+  width:500px;
+  position:absolute;
+  top:5px;
+  right:0px;
+  .user_name{
+    margin-left:20px;
+    float:left;
+    margin-top:10px;
+    margin-bottom:0px;
+  }
+  .follows{
+    clear:both;
+    .follow{
+      float:left;
+      margin-left:20px;
+      margin-top:0px;
+    }
+    .follower{
+      float:left;
+      margin-left:20px;
+      margin-top:0px;
+    }
+    }
+  }
+  .icon{
+    border-radius: 50%;
+    float:left;
+  }
+  .name{
+  float:left;
+  margin:0px;
+  }
+  .ikitai{
+  float:left;
+  margin-top:5px;
+  padding-left:30px;
+  }
+  .user_in{
+  float:left;
+  }
+/*----------------header-------------------*/
+/*----------------contents-------------------*/
+  .list-group{
+    margin-top:20px;
+    margin-left:20px;
+    width:335px;
+    float:left;
+  }
+  .ramen-image{
+    position: relative;
+    .ramen-image-title{
+      position: absolute;
+      color: white;
+      top: 10px;
+      left: 20px;
+    }
+    .ra-ime{
+    width:100%;
+    }
+    .ramen-image-genre{
+      position: absolute;
+      color: #fff;
+      bottom: 10px;
+      left: 20px;
+    }
+  }
+  .btns{
+  margin-left:10px;
+  }
+/*----------------contents-------------------*/
+}
