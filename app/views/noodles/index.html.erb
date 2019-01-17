@@ -1,6 +1,6 @@
 <div id="index">
   <!-- headerバー -->
-  <nav class="navbar navbar-default">
+  <!-- <nav class="navbar navbar-default "> -->
     <div class="container-fluid header-height">
       <div class="navbar-header">
         <a class="navbar-brand" href="#">
@@ -10,20 +10,21 @@
       <div class="collapse navbar-collapse" id="navbarEexample3">
         <form class="navbar-form kensaku" role="search">
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="場所">
+            <input type="text" class="form-control form-color" placeholder="場所">
           </div>
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="ジャンル">
+            <input type="text" class="form-control form-color" placeholder="ジャンル">
           </div>
           <div class="form-group">
-             <input type="text" class="form-control" placeholder="評価">
+             <input type="text" class="form-control form-color" placeholder="評価">
           </div>
           <button type="submit" class="btn btn-default">検索</button>
         </form>
+        <a href="#" class="btn post-btn">POST noodle</a>
       </div>
     </div>
-  </nav>
-<div class="container">  
+  <!-- </nav> -->
+<div class="container main">  
   <div class="row content">
     <!-- left-contents -->
     <div class="col-md-3 col-sm-3 col-xs-3">
@@ -33,9 +34,10 @@
           <h3>〇〇さん</h3>
           <p>フォロー数：〇〇人</p>
           <p>フォロワー数：〇〇人</p>
-          <p><a href="#" class="btn btn-danger">マイページ</a> <a href="#" class="btn btn-default">投稿</a></p>
+          <p><a href="#" class="btn  btns">マイページ</a> <a href="#" class="btn btn-default">投稿</a></p>
         </div><!-- /.caption -->
       </div><!-- /.thumbnail -->
+      <!-- 画面幅が991pxいかになったらプロフィールにしたに表示　-->
       <div class="min_rank">
         <ul class="list-group list-rank">
           <li class="list-group-item title">ランキング</li>
@@ -53,7 +55,7 @@
     <!-- senter-contents -->
       <div class="col-md-6 col-sm-9 col-xs-9">
         <ul class="nav nav-tabs">
-          <li role="presentation" class="active"><a href="#">フォロー</a></li>
+          <li role="presentation" class="active"><a href="#"  class="main-tab">フォロー</a></li>
           <li role="presentation"><a href="#">全体</a></li>
         </ul>
         <ul class="list-group">
@@ -69,9 +71,9 @@
             <h3 class="ramen-image-genre">{{ ragen }}</h3>
           </li>
           <li class="list-group-item" id="list5">
-            <a href="#" class="btn btn-danger btns">いいね！</a>
-            <a href="#" class="btn btn-danger btns">コメント</a>
-            <a href="#" class="btn btn-danger btns">マップ</a>
+            <a href="#" class="btn btns">いいね！</a>
+            <a href="#" class="btn   btns">コメント</a>
+            <a href="#" class="btn   btns">マップ</a>
           </li>
         </ul>
         <!-- copy -->
@@ -84,9 +86,9 @@
             <h3 class="ramen-image-genre">{{ ragen }}</h3>
           </li>
           <li class="list-group-item" id="list5">
-            <a href="#" class="btn btn-danger btns">いいね！</a>
-            <a href="#" class="btn btn-danger btns">コメント</a>
-            <a href="#" class="btn btn-danger btns">マップ</a>
+            <a href="#" class="btn   btns">いいね！</a>
+            <a href="#" class="btn   btns">コメント</a>
+            <a href="#" class="btn   btns">マップ</a>
           </li>
         </ul>
         <ul class="list-group">
@@ -98,9 +100,9 @@
             <h3 class="ramen-image-genre">{{ ragen }}</h3>
           </li>
           <li class="list-group-item" id="list5">
-            <a href="#" class="btn btn-danger btns">いいね！</a>
-            <a href="#" class="btn btn-danger btns">コメント</a>
-            <a href="#" class="btn btn-danger btns">マップ</a>
+            <a href="#" class="btn   btns">いいね！</a>
+            <a href="#" class="btn   btns">コメント</a>
+            <a href="#" class="btn   btns">マップ</a>
           </li>
         </ul>
         <ul class="list-group">
@@ -112,24 +114,9 @@
             <h3 class="ramen-image-genre">{{ ragen }}</h3>
           </li>
           <li class="list-group-item" id="list5">
-            <a href="#" class="btn btn-danger btns">いいね！</a>
-            <a href="#" class="btn btn-danger btns">コメント</a>
-            <a href="#" class="btn btn-danger btns">マップ</a>
-          </li>
-        </ul>
-        <ul class="list-group">
-          <li class="list-group-item" id="list1">ラーメン二郎（二郎系）</li>
-          <li class="list-group-item" id="list2">評価  ・・・・・</li>
-          <li class="list-group-item" id="list3">超高カロリー</li>
-          <li class="list-group-item ramen-image" id="list4">
-            <%= image_tag 'jirou.png', :size => "300x200"%>
-            <h2 class="ramen-image-title">{{ title }}</h2>
-            <h3 class="ramen-image-genre">{{ ragen }}</h3>
-          </li>
-          <li class="list-group-item" id="list5">
-            <a href="#" class="btn btn-danger btns">いいね！</a>
-            <a href="#" class="btn btn-danger btns">コメント</a>
-            <a href="#" class="btn btn-danger btns">マップ</a>
+            <a href="#" class="btn   btns">いいね！</a>
+            <a href="#" class="btn   btns">コメント</a>
+            <a href="#" class="btn   btns">マップ</a>
           </li>
         </ul>
         <ul class="list-group">
@@ -142,14 +129,29 @@
             <h3 class="ramen-image-genre">{{ ragen }}</h3>
           </li>
           <li class="list-group-item" id="list5">
-            <a href="#" class="btn btn-danger btns">いいね！</a>
-            <a href="#" class="btn btn-danger btns">コメント</a>
-            <a href="#" class="btn btn-danger btns">マップ</a>
+            <a href="#" class="btn   btns">いいね！</a>
+            <a href="#" class="btn   btns">コメント</a>
+            <a href="#" class="btn   btns">マップ</a>
+          </li>
+        </ul>
+        <ul class="list-group">
+          <li class="list-group-item" id="list1">ラーメン二郎（二郎系）</li>
+          <li class="list-group-item" id="list2">評価  ・・・・・</li>
+          <li class="list-group-item" id="list3">超高カロリー</li>
+          <li class="list-group-item ramen-image" id="list4">
+            <%= image_tag 'jirou.png', :size => "300x200"%>
+            <h2 class="ramen-image-title">{{ title }}</h2>
+            <h3 class="ramen-image-genre">{{ ragen }}</h3>
+          </li>
+          <li class="list-group-item" id="list5">
+            <a href="#" class="btn   btns">いいね！</a>
+            <a href="#" class="btn   btns">コメント</a>
+            <a href="#" class="btn   btns">マップ</a>
           </li>
         </ul>
         <!-- copy -->
       </div>
-
+<!-- 画面幅が991px以上になったら右側に表示　-->
     <div class="col-md-3  rank">
       <ul class="list-group list-rank">
         <li class="list-group-item title">ランキング</li>
