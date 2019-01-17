@@ -3,20 +3,32 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #new{
+  @media (max-width: 991px){
+    .container{
+      margin: 0;
+      width:100vw;
+      text-align: center;
+    }
+  }
+  padding-bottom: 15px;
   p{
     display: inline;
   }
   .hidden{
     display: none;
   }
+  .label-block{
+    display: block;
+    clear: both;
+  }
   .new-image{
     width: 70%;
   }
   .new-select{
-  	input{
+  	.select-input{
       display: none;
     }
-    label{
+    .select-label{
     	display: block;
     	float: left;
     	cursor: pointer;
@@ -29,7 +41,7 @@
     	font-size: 14px;
     	text-align: center;
     	line-height: 1;
-    	transition: .2s;
+      transition: .2s;
     }
     label:first-of-type{
     	border-radius: 3px 0 0 3px;
@@ -38,6 +50,13 @@
     	background-color: rgba(238, 29, 36, 0.7);
     	color: #fff;
     }
+  }
+  .shop-input{
+    border-radius: 10px;
+    margin-top: 15px;
+  }
+  .shop-list{
+    list-style: none;
   }
   .ramen-image{
     position: relative;
@@ -55,18 +74,29 @@
       left: 20px;
     }
   }
+  .review-form{
+    width: 60%;
+  }
   .review{
-    border-radius: 20px;
+    border-radius: 2px;
     width: 100%;
   }
   .btn-ramen{
     background-color: rgba(238, 29, 36, 0.7);
     color: #fff;
+    position: fixed;
+    top: 15px;
+    right: 30%;
+  }
+  .credit{
+    position: fixed;
+    bottom: 0;
+    left: 10px;
   }
 }
 
 #index{
-  background-color: #f5f8fa;;
+  background-color: #f5f8fa;
   .container-fluid{
       color: #fff;
   }
