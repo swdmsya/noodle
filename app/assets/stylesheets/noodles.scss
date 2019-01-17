@@ -67,79 +67,80 @@
 
 #index{
   .container-fluid{
-  background-color:red
+    background-color:red
   }
   .header-height{
     height:80px;
     position:fixed;
+    top: 0;
     width:100%;
     z-index: 1;
   }
   .kensaku{
-  position:absolute;
-  bottom:15px;
-  right:10px;
+    position:absolute;
+    bottom:15px;
+    right:10px;
   }
-  .thumbnail{
-  width:200px;
-  position:fixed;
-  top:160px;
-  left:60px;
-  .icon{
-    border-radius: 50%;
-  }
-  }
-  .ramen-image{
-    position: relative;
-    .ra-ime{
-      width:100%;
+  .content{
+    padding-top: 30px;
+    .profile{
+      margin: auto 0;
+
+      .icon{
+        width: 180px;
+        border-radius: 50%;
+      }
     }
-    .ramen-image-title{
-      position: absolute;
-      color: white;
-      top: 10px;
-      left: 20px;
+    .ramen-image{
+      position: relative;
+      .ra-ime{
+        width:100%;
+      }
+      .ramen-image-title{
+        position: absolute;
+        color: white;
+        top: 10px;
+        left: 20px;
+      }
+      .ramen-image-genre{
+        position: absolute;
+        color: #fff;
+        bottom: 10px;
+        left: 20px;
+      }
     }
-    .ramen-image-genre{
-      position: absolute;
-      color: #fff;
-      bottom: 10px;
-      left: 20px;
+    .list-group{
+      margin-top:20px;
+      .icon{
+        border-radius: 50%;
+      }
     }
-  }
-  .posts{
-    position:relative;
-    left:340px;
-    top:30px;
-    width:550px;
-  }
-  .list-group{
-  margin-top:20px;
-  width:550px;
-  .icon{
-    border-radius: 50%;
-  }
-  }
-  .btns{
-    margin-right:10px;
-  }
-  .rank{
-    position:fixed;
-    top:160px;
-    right:60px;
-    .list-rank{
-    width:300px
+    .btns{
+      margin-right:10px;
     }
     .title{
       background-color:red;
       color:white;
     }
+    .ranking-ime{
+      width: 100%;
+    }
     .ramen-image-title{
       position: absolute;
       color: white;
       top: 10px;
       left: 20px;
-      }
-  }
+    }
+   }
+   @media (max-width: 991px){
+    .rank{
+      display: none;
+    }
+   }
+   @media (min-width: 992px){
+     .min_rank{
+       display: none;
+     }
+   }
 }
 

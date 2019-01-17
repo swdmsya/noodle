@@ -4,9 +4,9 @@ var app = new Vue({
     preview: '',
     title: '',
     ragen: '',
-    shops: null,
+    shops: '',
     keyword: '',
-    message: '',
+    message: ''
   },
   watch: {
     keyword: function(newKeyword, oldKeyword){

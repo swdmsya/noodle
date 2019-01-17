@@ -38,15 +38,13 @@
     </label>
     <button type="submit" name="button" class="btn btn-ramen">投稿</button>
     <textarea v-model="keyword"></textarea>
-      {{keyword}}
     <p v-clock>
       {{message}}
     </p>
-    {{shops}}
     <ul>
-      <li v-for="(name) in shops" v-cloak>
-          {{ shop }} 
+      <li v-for="shop in shops.rest" v-cloak>
+          {{ shop.name }} 
+          {{ shop.addres}}
       </li>
     </ul>
   </form>
-</div>
