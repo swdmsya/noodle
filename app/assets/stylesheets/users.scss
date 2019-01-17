@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #show{
+  background-color: #f5f8fa;
   @media (max-width: 991px){
     .container{
       margin: 0;
@@ -13,7 +14,7 @@
    }
 /*----------------header-------------------*/
   .container-fluid{
-    background-color: rgba(238, 29, 36, 0.7);
+    background-color: #fff;
   }
   .header-height{
     height:80px;
@@ -21,7 +22,7 @@
     top: 0;
     width:100%;
     z-index: 1;
-    color: #fff;
+    color:rgb(238, 29, 36);
   }
   .user_info{
   width:500px;
