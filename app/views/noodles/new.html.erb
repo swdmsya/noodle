@@ -1,41 +1,63 @@
-<div id="new" class="new container">
-  <form >
-    <label>
-      <i class="fas fa-image"></i>
-      <p>画像を選択</p>
-      <input type="file" v-on:change="handlecahnge" class="hidden"/>
-    </label>
-    <div class="new-select">
-        <input type="radio" name="genre" id="select1" value="豚骨" checked="" v-model="ragen">
-        <label for="select1">豚骨</label>
-        <input type="radio" name="genre" id="select2" value="家系" v-model="ragen">
-        <label for="select2">家系</label>
-        <input type="radio" name="genre" id="select3" value="二郎" v-model="ragen">
-        <label for="select3">二郎</label>
-        <input type="radio" name="genre" id="select4" value="まぜそば" v-model="ragen">
-        <label for="select4">まぜそば</label>
-        <input type="radio" name="genre" id="select5" value="つけ麺" v-model="ragen">
-        <label for="select5">つけ麺</label>
-        <input type="radio" name="genre" id="select6" value="醤油" v-model="ragen">
-        <label for="select6">しょうゆ</label>
-        <input type="radio" name="genre" id="select7" value="味噌" v-model="ragen">
-        <label for="select7">味噌</label>
-        <input type="radio" name="genre" id="select8" value="その他" v-model="ragen">
-        <label for="select8">その他</label>
-    </div>
-    <label class="form-item">
-      <h2>ラーメン名</h2>
-      <input type="text" name="title" v-model="title">
-    </label>
-    <div v-if="preview" class="ramen-image">
-      <img v-bind:src="preview" class="new-image img-rounded"/>
-      <h2 class="ramen-image-title">{{ title }}</h2>
-      <h3 class="ramen-image-genre">{{ ragen }}</h3>
-    </div>
-    <label class = "form-item">
-      <p>コメント</p>
-      <textarea name="review" class="review"></textarea>
-    </label>
-    <button type="submit" name="button" class="btn btn-ramen">投稿</button>
-  </form>
+<div id="new" >
+  <div class="content container">
+    <form >
+      <label class="label-block">
+        <i class="fas fa-plus fa-3x"></i> 
+        <p>画像を選択</p>
+        <input type="file" v-on:change="handlecahnge" class="hidden"/>
+      </label>
+      <label class="label-block">
+        <div class="new-select">
+            <h6>ジャンル</h6>
+            <input type="radio" class="select-input" name="genre" id="select1" value="豚骨" checked="" v-model="ragen">
+            <label for="select1" class="select-label">豚骨</label>
+            <input type="radio" class="select-input" name="genre" id="select2" value="家系" v-model="ragen">
+            <label for="select2" class="select-label">家系</label>
+            <input type="radio" class="select-input" name="genre" id="select3" value="二郎" v-model="ragen">
+            <label for="select3" class="select-label">二郎</label>
+            <input type="radio" class="select-input" name="genre" id="select4" value="まぜそば" v-model="ragen">
+            <label for="select4" class="select-label">まぜそば</label>
+            <input type="radio" class="select-input" name="genre" id="select5" value="つけ麺" v-model="ragen">
+            <label for="select5"class="select-label" >つけ麺</label>
+            <input type="radio" class="select-input" name="genre" id="select6" value="醤油" v-model="ragen">
+            <label for="select6" class="select-label">しょうゆ</label>
+            <input type="radio" class="select-input" name="genre" id="select7" value="味噌" v-model="ragen">
+            <label for="select7" class="select-label">味噌</label>
+            <input type="radio" class="select-input" name="genre" id="select8" value="塩" v-model="ragen">
+            <label for="select8" class="select-label"> 塩</label>
+            <input type="radio" class="select-input" name="genre" id="select9" value="タンメン" v-model="ragen">
+            <label for="select9" class="select-label"> タンメン</label>
+            <input type="radio" class="select-input" name="genre" id="select10" value="その他" v-model="ragen">
+            <label for="select10" class="select-label">その他</label>
+        </div>
+      </label>
+      <label class="label-block">
+        <div class="shop-select">
+          <h5> 行った店を検索し選んでください(空欄可)</h5>
+          <input type='text' v-model="keyword" class="shop-input">
+          <p v-clock>
+            {{message}}
+          </p>
+          <ul class="shop-list">
+            <li v-for="shop in shops.rest" v-cloak>
+              <input type="radio" name="shop" v-bind:id="shop.id" v-bind:value="shop" >
+              <label  v-bind:for="shop.id">{{shop.name}}{{shop.address}}</label>
+            </li>
+          </ul>
+        </div>
+      </label>
+      <div v-if="preview" class="ramen-image">
+        <img v-bind:src="preview" class="new-image img-rounded"/>
+        <h3 class="ramen-image-genre">{{ ragen }}</h3>
+      </div>
+      <label class = "form-item review-form">
+        <p> ひとこと</p>
+        <input type='text'name="review" class="review">
+      </label>
+      <button type="submit" name="button" class="btn btn-ramen">注文</button>
+    </form>
+    <a href="https://api.gnavi.co.jp/api/scope/" target="_blank" class="credit">
+      <img src="https://api.gnavi.co.jp/api/img/credit/api_155_20.gif" width="155" height="20" border="0" alt="グルメ情報検索サイト　ぐるなび">
+    </a>
+  </div>
 </div>
