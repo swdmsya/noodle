@@ -7,7 +7,7 @@ class NoodlesController < ApplicationController
   end
 
   def new
-    @noodle = current_user.post.buid
+    @noodle = current_user.posts.build
     @shop = Shop.new
   end
 

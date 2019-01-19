@@ -1,36 +1,38 @@
 <div id="new" >
   <div class="content container">
-    <form >
-      <label class="label-block">
+    <%= form_with(model: [@noodle, @shop], url: noodles_path) do |f| %>
+      <%= f.label :image, class: 'label-block' do %>
         <i class="fas fa-plus fa-3x"></i> 
         <p>画像を選択</p>
-        <input type="file" v-on:change="handlecahnge" class="hidden"/>
-      </label>
-      <label class="label-block">
+        <% f.file_field :image, class: 'hidden', "v-on:change" => "handlechange"%>
+      <% end %>
+      <%= f.label :genre_id, class: 'label-block' do %>
         <div class="new-select">
             <h6>ジャンル</h6>
-            <input type="radio" class="select-input" name="genre" id="select1" value="豚骨" checked="" v-model="ragen">
+            <%= f.radio_button :genre_id, 1 , id: 'select1', class: 'select-input', "v-model" => "ragen"%>
+            <%= f.label :genre_id, "豚骨",value: "select1", class: "select-label"%>
             <label for="select1" class="select-label">豚骨</label>
-            <input type="radio" class="select-input" name="genre" id="select2" value="家系" v-model="ragen">
+            <%= f.radio_button :genre_id, 2 , id: 'select2', class: 'select-input', "v-model" => "ragen"%>
             <label for="select2" class="select-label">家系</label>
-            <input type="radio" class="select-input" name="genre" id="select3" value="二郎" v-model="ragen">
+            <%= f.radio_button :genre_id, 3, id: 'select3', class: 'select-input', "v-model" => "ragen"%>
             <label for="select3" class="select-label">二郎</label>
-            <input type="radio" class="select-input" name="genre" id="select4" value="まぜそば" v-model="ragen">
+            <%= f.radio_button :genre_id, 4, id: 'select4', class: 'select-input', "v-model" => "ragen"%>
             <label for="select4" class="select-label">まぜそば</label>
-            <input type="radio" class="select-input" name="genre" id="select5" value="つけ麺" v-model="ragen">
+            <%= f.radio_button :genre_id, 5, id: 'select5', class: 'select-input', "v-model" => "ragen"%>
             <label for="select5"class="select-label" >つけ麺</label>
-            <input type="radio" class="select-input" name="genre" id="select6" value="醤油" v-model="ragen">
+            <%= f.radio_button :genre_id, 6, id: 'select6', class: 'select-input', "v-model" => "ragen"%>
             <label for="select6" class="select-label">しょうゆ</label>
-            <input type="radio" class="select-input" name="genre" id="select7" value="味噌" v-model="ragen">
+            <%= f.radio_button :genre_id, 7, id: 'select7', class: 'select-input', "v-model" => "ragen"%>
             <label for="select7" class="select-label">味噌</label>
-            <input type="radio" class="select-input" name="genre" id="select8" value="塩" v-model="ragen">
+            <%= f.radio_button :genre_id, 8, id: 'select8', class: 'select-input', "v-model" => "ragen"%>
             <label for="select8" class="select-label"> 塩</label>
-            <input type="radio" class="select-input" name="genre" id="select9" value="タンメン" v-model="ragen">
+            <%= f.radio_button :genre_id, 9, id: 'select9', class: 'select-input', "v-model" => "ragen"%>
             <label for="select9" class="select-label"> タンメン</label>
+            <%= f.radio_button :genre_id, 10, id: 'select10', class: 'select-input', "v-model" => "ragen"%>
             <input type="radio" class="select-input" name="genre" id="select10" value="その他" v-model="ragen">
             <label for="select10" class="select-label">その他</label>
         </div>
-      </label>
+      <% end %>
       <label class="label-block">
         <div class="shop-select">
           <h5> 行った店を検索し選んでください(空欄可)</h5>
@@ -55,7 +57,7 @@
         <input type='text'name="review" class="review">
       </label>
       <button type="submit" name="button" class="btn btn-ramen">注文</button>
-    </form>
+    <% end %>
     <a href="https://api.gnavi.co.jp/api/scope/" target="_blank" class="credit">
       <img src="https://api.gnavi.co.jp/api/img/credit/api_155_20.gif" width="155" height="20" border="0" alt="グルメ情報検索サイト　ぐるなび">
     </a>
