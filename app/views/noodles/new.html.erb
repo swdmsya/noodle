@@ -3,36 +3,11 @@
     <%= form_with(model: [@noodle, @shop], url: noodles_path) do |f| %>
       <%= f.label :image, class: 'label-block' do %>
         <i class="fas fa-plus fa-3x"></i> 
-        <p>画像を選択</p>
-        <% f.file_field :image, class: 'hidden', "v-on:change" => "handlechange"%>
+        <p>画像を選択</p> 
+        <%= f.file_field :image, class: 'hidden', "v-on:change" => "handlechange"%>
       <% end %>
-      <%= f.label :genre_id, class: 'label-block' do %>
-        <div class="new-select">
-            <h6>ジャンル ,,,,</h6>
-            <%= f.radio_button :genre_id, 1 , id: 'select1', class: 'select-input', "v-model" => "ragen"%>
-            <%= f.label :genre_id, "豚骨",value: "select1", class: "select-label"%>
-            <label for="select1" class="select-label">豚骨</label>
-            <%= f.radio_button :genre_id, 2 , id: 'select2', class: 'select-input', "v-model" => "ragen"%>
-            <label for="select2" class="select-label">家系</label>
-            <%= f.radio_button :genre_id, 3, id: 'select3', class: 'select-input', "v-model" => "ragen"%>
-            <label for="select3" class="select-label">二郎</label>
-            <%= f.radio_button :genre_id, 4, id: 'select4', class: 'select-input', "v-model" => "ragen"%>
-            <label for="select4" class="select-label">まぜそば</label>
-            <%= f.radio_button :genre_id, 5, id: 'select5', class: 'select-input', "v-model" => "ragen"%>
-            <label for="select5"class="select-label" >つけ麺</label>
-            <%= f.radio_button :genre_id, 6, id: 'select6', class: 'select-input', "v-model" => "ragen"%>
-            <label for="select6" class="select-label">しょうゆ</label>
-            <%= f.radio_button :genre_id, 7, id: 'select7', class: 'select-input', "v-model" => "ragen"%>
-            <label for="select7" class="select-label">味噌</label>
-            <%= f.radio_button :genre_id, 8, id: 'select8', class: 'select-input', "v-model" => "ragen"%>
-            <label for="select8" class="select-label"> 塩</label>
-            <%= f.radio_button :genre_id, 9, id: 'select9', class: 'select-input', "v-model" => "ragen"%>
-            <label for="select9" class="select-label"> タンメン</label>
-            <%= f.radio_button :genre_id, 10, id: 'select10', class: 'select-input', "v-model" => "ragen"%>
-            <input type="radio" class="select-input" name="genre" id="select10" value="その他" v-model="ragen">
-            <label for="select10" class="select-label">その他</label>
-        </div>
-      <% end %>
+      <%= f.select :user_id, [["豚骨",  1], ["家系",  2],["二郎",  3], ["つけ麺",  4],
+               ["味噌",  5], ["醤油", 6],["塩",  7], ["タンメン",  8],["まぜそば",  9],["その他", 10]], "v-model": "ragen"%>
       <label class="label-block">
         <div class="shop-select">
           <h5> 行った店を検索し選んでください(空欄可)</h5>

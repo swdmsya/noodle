@@ -72,3 +72,5 @@ gem 'paperclip'
 gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem 'mini_magick'
+
+gem 'vue-rails-form-builder', '~> 0.8.2'
