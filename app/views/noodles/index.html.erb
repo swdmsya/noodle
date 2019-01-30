@@ -30,7 +30,7 @@
     <div class="col-md-3 col-sm-3 col-xs-3">
       <% if user_signed_in?%>
       <div class="thumbnail profile">
-          <%= image_tag 'ra-mennmann.jpeg',:class => "icon" %>
+          <%= image_tag current_user.avatar,:class => "icon" %>
         <div class="caption">
           <% @user ||= current_user %>
           <h3><%= @user.nickname%><span>さん</span></h3>
