@@ -7,13 +7,14 @@ class NoodlesController < ApplicationController
   end
 
   def new
-    @noodle = current_user.posts.build
+    @noodle = Post.new
     @shop = Shop.new
   end
 
   def create
     @noolde = current_user.post.build(post_params)
     @shop = Shop.new(Shop_params)
+    binding.pry
     if @noodle.save
       Shop.where(id: @shop.id).first_or_create(shop_params)
       redirect_to  root

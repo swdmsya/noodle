@@ -34,10 +34,10 @@ created: function() {
         this.message = '';
         return;
       }
-      
+
        this.message = 'loading...';
         var vm = this;
-        axios.get(`https://api.gnavi.co.jp/RestSearchAPI/v3/?keyid=55ca579200a747ff64c569ceca6b9922&name=${this.keyword}&freeword=ラーメン`)
+        axios.get(`https://api.gnavi.co.jp/RestSearchAPI/v3/?keyid=&name=${this.keyword}&freeword=ラーメン`)
         .then(function(response){
           console.log(response);
           vm.shops = response.data;
