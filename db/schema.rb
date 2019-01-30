@@ -10,9 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2019_01_16_125330) do
-=======
 ActiveRecord::Schema.define(version: 2019_01_18_035702) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -61,7 +58,6 @@ ActiveRecord::Schema.define(version: 2019_01_18_035702) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
->>>>>>> 9c77bd77a60ad825c6fe03df34eb61773d247209
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -71,16 +67,10 @@ ActiveRecord::Schema.define(version: 2019_01_18_035702) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-<<<<<<< HEAD
     t.string "nickname"
-=======
->>>>>>> 9c77bd77a60ad825c6fe03df34eb61773d247209
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-<<<<<<< HEAD
-=======
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
->>>>>>> 9c77bd77a60ad825c6fe03df34eb61773d247209
 end
