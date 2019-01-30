@@ -1,23 +1,40 @@
 <div id="show">
+  <% @user ||= current_user %>
   <!-- header -->
   <nav class="navbar navbar-default">
     <div class="container-fluid header-height">
       <div class="navbar-header">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="/">
           ロゴ
         </a>
         <div class="user_info">
           <%= image_tag 'ra-mennmann.jpeg', class: 'icon'%>
           <div class="user_in">
             <div class="user_name">
-              <h3 class="name">〇〇さん</h3>
+              <h3 class="name"><%=@nickname%>さん</h3>
               <h4 class="ikitai">行きたい：〇〇</h4>
             </div>
             <div class="follows">
-              <h4 class="follow">フォロー：〇〇人</h4>
-              <h4 class="follower">フォロワー：〇〇人</h4>
+              <% @user ||= current_user %>
+              <h4 class="follow"><span>フォロー数：</span>
+                <a href="<%= following_user_path(@user) %>">
+                  <strong id="following" class="stat">
+                    <%= @user.followings.count %>人
+                  </strong>
+                </a>
+              </h4>
+              <h4 class="follower"><span>フォロワー数：</span>
+                <a href="<%= followers_user_path(@user) %>">
+                  <strong id="followers" class="stat">
+                    <%= @user.followers.count %>人
+                  </strong>
+                </a>
+              </h4>
             </div>
           </div>
+
+          <%= render 'follow_form' %>
+
         </div>
       </div>
     </div>

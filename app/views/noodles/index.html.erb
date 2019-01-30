@@ -20,24 +20,49 @@
           </div>
           <button type="submit" class="btn btn-default">検索</button>
         </form>
-        <a href="#" class="btn post-btn">POST noodle</a>
+        <a href="noodles/new" class="btn post-btn">POST noodle</a>
       </div>
     </div>
   <!-- </nav> -->
-<div class="container main">  
+<div class="container main">
   <div class="row content">
     <!-- left-contents -->
     <div class="col-md-3 col-sm-3 col-xs-3">
+      <% if user_signed_in?%>
       <div class="thumbnail profile">
           <%= image_tag 'ra-mennmann.jpeg',:class => "icon" %>
         <div class="caption">
-          <h3>〇〇さん</h3>
-          <p>フォロー数：〇〇人</p>
-          <p>フォロワー数：〇〇人</p>
-          <p><a href="#" class="btn  btns">マイページ</a> <a href="#" class="btn btn-default">投稿</a></p>
+          <% @user ||= current_user %>
+          <h3><%= @user.nickname%><span>さん</span></h3>
+          <p><span>フォロー数：</span>
+            <a href="<%= following_user_path(@user) %>">
+              <strong id="following" class="stat">
+                <%= @user.followings.count %>人
+              </strong>
+            </a>
+          </p>
+          <p><span>フォロワー数：</span>
+            <a href="<%= followers_user_path(@user) %>">
+              <strong id="followers" class="stat">
+                <%= @user.followers.count %>人
+              </strong>
+            </a>
+          </p>
+          <p><a href="users/<%=current_user.id%>" class="btn  btns">マイページ</a>
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete%></p>
         </div><!-- /.caption -->
       </div><!-- /.thumbnail -->
-      <!-- 画面幅が991pxいかになったらプロフィールにしたに表示　-->
+      <% else%>
+      <div class="thumbnail profile">
+          <%= image_tag 'ra-mennmann.jpeg',:class => "icon" %>
+        <div class="caption">
+          <h3>ログインしてみましょう</h3>
+          <p><%= link_to "新規登録", new_user_registration_path %>
+             <%= link_to "ログイン", user_session_path, method: :post %></p>
+        </div><!-- /.caption -->
+      </div><!-- /.thumbnail -->
+      <%end%>
+      <!-- 画面幅が991pxいかになったらプロフィールにしたに表示-->
       <div class="min_rank">
         <ul class="list-group list-rank">
           <li class="list-group-item title">ランキング</li>
@@ -165,7 +190,7 @@
         <li class="list-group-item">５位</li>
       </ul>
     </div>
-    
+
   </div>
 </div>
 
