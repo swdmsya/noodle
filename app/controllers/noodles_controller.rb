@@ -25,6 +25,6 @@ class NoodlesController < ApplicationController
   private
 
     def post_params
-      params.require(:post).permit(:impressions, :image, :user_id  :genre_id)
+      params.require(:post).permit(:impressions, :image, :user_id ,:genre_id)
     end
 end
