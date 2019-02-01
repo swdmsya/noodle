@@ -1,6 +1,8 @@
 class NoodlesController < ApplicationController
   before_action :move_to_index, except: :index
+
   def index
+    @all_tweets = Post.all.order("created_at DESC")
   end
 
   def show
