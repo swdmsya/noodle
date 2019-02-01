@@ -8,15 +8,11 @@ class NoodlesController < ApplicationController
 
   def new
     @noodle = Post.new
-    @shop = Shop.new
   end
 
   def create
-    @noolde = current_user.post.build(post_params)
-    @shop = Shop.new(Shop_params)
-    binding.pry
-    if @noodle.save
-      Shop.where(id: @shop.id).first_or_create(shop_params)
+    @noodle = Post.new(post_params)
+    if @noodle.save!
       redirect_to  root
     else
       redirect_to :new
@@ -29,10 +25,6 @@ class NoodlesController < ApplicationController
   private
 
     def post_params
-      params.require(:post).permit(:impressions, :shop_id, :genre_id)
-    end
-
-    def shop_params
-      params.require(:shop).permit(:id, :name, :address, :url)
+      params.require(:post).permit(:impressions, :image, :user_id  :genre_id)
     end
 end

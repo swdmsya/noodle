@@ -1,40 +1,26 @@
 <div id="new" >
   <div class="content container">
-    <%= form_with(model: [@noodle, @shop], url: noodles_path) do |f| %>
+    <%= form_with(model: [@noodle], url: noodles_path) do |f| %>
       <%= f.label :image, class: 'label-block' do %>
-        <i class="fas fa-plus fa-3x"></i> 
-        <p>画像を選択</p> 
+        <i class="fas fa-plus fa-3x"></i>
+        <p>画像を選択</p>
         <%= f.file_field :image, class: 'hidden', "v-on:change" => "handlechange"%>
       <% end %>
-      <%= f.select :user_id, [["豚骨",  1], ["家系",  2],["二郎",  3], ["つけ麺",  4],
-               ["味噌",  5], ["醤油", 6],["塩",  7], ["タンメン",  8],["まぜそば",  9],["その他", 10]], "v-model": "ragen"%>
-      <label class="label-block">
-        <div class="shop-select">
-          <h5> 行った店を検索し選んでください(空欄可)</h5>
-          <input type='text' v-model="keyword" class="shop-input">
-          <p v-clock>
-            {{message}}
-          </p>
-          <ul class="shop-list">
-            <li v-for="shop in shops.rest" v-cloak>
-              <input type="radio" name="shop" v-bind:id="shop.id" v-bind:value="shop" >
-              <label  v-bind:for="shop.id">{{shop.name}}{{shop.address}}</label>
-            </li>
-          </ul>
+      <div class="genre-select">
+        <%= f.select :user_id, [["豚骨",  1], ["家系",  2],["二郎",  3], ["つけ麺",  4],
+               ["味噌",  5], ["醤油", 6],["塩",  7], ["タンメン",  8],["まぜそば",  9],["その他", 10]], "v-model": "ragen" %>
+      </div>
+      <div class="image-place">
+        <div v-if="preview" class="ramen-image">
+          <img v-bind:src="preview" class="new-image img-rounded"/>
         </div>
-      </label>
-      <div v-if="preview" class="ramen-image">
-        <img v-bind:src="preview" class="new-image img-rounded"/>
-        <h3 class="ramen-image-genre">{{ ragen }}</h3>
       </div>
       <label class = "form-item review-form">
-        <p> ひとこと</p>
-        <input type='text'name="review" class="review">
+        <%= f.text_area :impressions ,class: "review", placeholder: "とても美味しい〜！ #noodle屋" %>
       </label>
-      <button type="submit" name="button" class="btn btn-ramen">注文</button>
+      <div class="btn-place">
+        <%= f.submit "注文", class: "btn btn-ramen" %>
+      </div>
     <% end %>
-    <a href="https://api.gnavi.co.jp/api/scope/" target="_blank" class="credit">
-      <img src="https://api.gnavi.co.jp/api/img/credit/api_155_20.gif" width="155" height="20" border="0" alt="グルメ情報検索サイト　ぐるなび">
-    </a>
   </div>
 </div>
