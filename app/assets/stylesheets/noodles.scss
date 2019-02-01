@@ -127,6 +127,7 @@
   }
   .main{
     padding-top: 100px;
+    
     .profile{
       margin: auto 0;
 
@@ -197,6 +198,11 @@
      .min_rank{
        display: none;
      }
+   }
+   .nav-size{
+     height:50px;
+     width:100px;
+     float:left;
    }
 }
 
