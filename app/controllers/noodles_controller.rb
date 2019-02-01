@@ -1,5 +1,5 @@
 class NoodlesController < ApplicationController
-
+  before_action :move_to_index, except: :index
   def index
   end
 
@@ -34,5 +34,9 @@ class NoodlesController < ApplicationController
 
     def shop_params
       params.require(:shop).permit(:id, :name, :address, :url)
+    end
+
+    def move_to_index
+      redirect_to action: :index unless user_signed_in?
     end
 end
