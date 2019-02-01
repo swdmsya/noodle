@@ -28,4 +28,5 @@ has_many :shops, through: :posts
   def unfollow!(other_user)
     following_relationships.find_by(following_id: other_user.id).destroy
   end
+
 end
