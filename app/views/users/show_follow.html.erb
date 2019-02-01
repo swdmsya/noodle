@@ -1,0 +1,23 @@
+  <nav class="navbar navbar-default">
+    <div class="container-fluid header-height">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">
+          ロゴ
+        </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+<% @user.followings.each do |user| %>
+  <div class="col-xs-6 col-md-3">
+    <div class="thumbnail">
+      <img src="http://bootstrap3.cyberlab.info/img/sample-256x256.png", class="icon">
+      <div class="caption">
+        <h3><%= user.nickname %>さん</h3>
+        <h5 class="member">フォロー：<%= user.followings.count %></h5>
+        <h5 class="member">フォロワー：<%= user.followers.count %></h5>
+        <h3 class="clear"><%= link_to '詳細', user_path(user), class: "btn btns"%></h3>
+      </div>
+    </div>
+  </div>
+<% end %>
