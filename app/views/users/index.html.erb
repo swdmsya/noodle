@@ -78,11 +78,11 @@
       </div>
     </div>
     <!-- senter-contents -->
-  <div class="col-md-6 col-sm-9 col-xs-9">
-    <% @posts.each do |post| %>
-      <%= render partial: "post", locals: { post: post } %>
-    <% end %>
-  </div>
+      <div class="col-md-6 col-sm-9 col-xs-9">
+        <% @posts.each do |post| %>
+          <%= render partial: "post", locals: { post: post } %>
+        <% end %>
+      </div>
 <!-- 画面幅が991px以上になったら右側に表示　-->
     <div class="col-md-3  rank">
       <ul class="list-group list-rank">
@@ -100,4 +100,3 @@
 
   </div>
 </div>
-

@@ -1,4 +1,25 @@
 class UsersController < ApplicationController
+
+  def index
+    @user  = current_user
+    @users = @user.followings
+    @posts = []
+      if @users.present?
+        @users.each do |user|
+          posts = Post.where(user_id: user.id).order(created_at: :desc)
+          @posts.concat(posts)
+        end
+          @posts = @posts.sort_by{|post| post.created_at}.reverse
+          if @posts.nil?
+            flash[:notice]="まだ投稿がありません…"
+            redirect_to("/")
+          end
+      else
+        flash[:notice]="誰かをフォローしてみましょう！"
+        redirect_to("/")
+      end
+  end
+  
   def show
     @user = User.find(params[:id])
     @nickname = @user.nickname

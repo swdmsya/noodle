@@ -61,7 +61,6 @@ ActiveRecord::Schema.define(version: 2019_01_30_020442) do
     t.index ["following_id"], name: "index_relationships_on_following_id"
   end
 
-  
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
