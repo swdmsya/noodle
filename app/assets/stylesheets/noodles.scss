@@ -52,6 +52,8 @@
   .ramen-image{
     position: relative;
     margin-bottom: 20px;
+    height: 100%;
+    width: 100%;
     .ramen-image-title{
       position: absolute;
       color: white;
@@ -132,6 +134,7 @@
       position: relative;
       .ra-ime{
         width:100%;
+        height: 100%;
       }
       .ramen-image-title{
         position: absolute;

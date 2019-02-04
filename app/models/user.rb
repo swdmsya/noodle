@@ -16,6 +16,7 @@ has_many :shops, through: :posts
 
   has_one_attached :avatar
   validates :email, presence: true
+  validates :nickname, presence: true
 
   def following?(other_user)
     following_relationships.find_by(following_id: other_user.id)
