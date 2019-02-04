@@ -1,12 +1,11 @@
 class Post < ApplicationRecord
 	#association
-	belongs_to :genre, optional: true
-	belongs_to :shop, optional: true
-	belongs_to :user, optional: true
+	belongs_to :genre
+	belongs_to :user
 
 	#activestorage
-	#has_one_attached :image
+	has_one_attached :image
 	#validation
-	#validates :genre_id, acceptance: true
+	validates :genre_id, acceptance: true
 	validates :user_id, presence: true
 end

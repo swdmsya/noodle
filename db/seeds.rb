@@ -11,3 +11,5 @@ genre = ['豚骨', '家系', '二郎', 'まぜそば', 'つけ麺', 'しょう�
 genre.each.with_index(1) do |item, i|
   Genre.create!(id: i, genre: item)
 end
+
+
