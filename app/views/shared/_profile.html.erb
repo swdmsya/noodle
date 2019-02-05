@@ -1,0 +1,40 @@
+<div class="col-md-3 col-sm-3 col-xs-3">
+      <% if user_signed_in?%>
+      <div class="thumbnail profile">
+          <%= image_tag current_user.avatar,:class => "icon" %>
+        <div class="caption">
+          <% @user ||= current_user %>
+          <h3><%= @user.nickname%><span>さん</span></h3>
+          <p><span>フォロー数：</span>
+            <a href="<%= following_user_path(@user) %>">
+              <strong id="following" class="stat">
+                <%= @user.followings.count %>人
+              </strong>
+            </a>
+          </p>
+          <p><span>フォロワー数：</span>
+            <a href="<%= followers_user_path(@user) %>">
+              <strong id="followers" class="stat">
+                <%= @user.followers.count %>人
+              </strong>
+            </a>
+          </p>
+          <p><a href="users/<%=current_user.id%>" class="btn  btns">マイページ</a>
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete%></p>
+        </div><!-- /.caption -->
+      </div><!-- /.thumbnail -->
+      <% else%>
+      <div class="thumbnail profile">
+          <%= image_tag "logo.png",:class => "icon" %>
+        <div class="caption">
+          <h3>ログインしてみましょう</h3>
+          <p><%= link_to "新規登録", new_user_registration_path %>
+             <%= link_to "ログイン", user_session_path, method: :post %></p>
+        </div><!-- /.caption -->
+      </div><!-- /.thumbnail -->
+      <%end%>
+      <!-- 画面幅が991pxいかになったらプロフィールにしたに表示-->
+      <div class="min_rank">
+        <%= render partial: 'shared/ranking' %>
+      </div>
+    </div>
