@@ -50,6 +50,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   #ER図生成
   gem 'rails-erd'
+  gem 'faker'
 end
 
 group :test do
@@ -64,14 +65,23 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'pry-rails'
+
 gem 'compass-rails','3.1.0'
+
 gem 'sprockets', '3.7.2'
+
 gem 'devise'
+
 gem 'kaminari'
+
 gem 'paperclip'
+
 gem 'bootstrap-sass'
+
 gem 'jquery-rails'
+
 gem 'mini_magick'
+
 gem 'rb-readline'
 
 gem 'vue-rails-form-builder', '~> 0.8.2'

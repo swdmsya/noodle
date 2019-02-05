@@ -18,12 +18,14 @@ has_many :shops, through: :posts
   validates :email, presence: true
   validates :nickname, presence: true
 
+  #フォロしていいたらtrueを返す
   def following?(other_user)
-    following_relationships.find_by(following_id: other_user.id)
+    following.include?(other_user)
   end
 
-  def follow!(other_user)
-    following_relationships.create!(following_id: other_user.id)
+  #ユーザーをフォローする
+  def follow(other_user)
+    followings << other_user
   end
 
   def unfollow!(other_user)
