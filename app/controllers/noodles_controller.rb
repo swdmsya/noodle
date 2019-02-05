@@ -13,11 +13,11 @@ class NoodlesController < ApplicationController
   end
 
   def create
-    @noodle = Post.new(post_params)
-    if @noodle.save!
-      redirect_to  root
+    @noodle = current_user.posts.build(post_params)
+    if @noodle.save
+      redirect_to action: :index
     else
-      redirect_to :new
+      redirect_to action: :new
     end
   end
 
@@ -27,7 +27,7 @@ class NoodlesController < ApplicationController
   private
 
     def post_params
-      params.require(:post).permit(:impressions, :image, :user_id ,:genre_id)
+      params.require(:post).permit(:impressions, :image, :genre_id)
     end
 
     def move_to_index

@@ -1,14 +1,12 @@
     <ul class="list-group">
         <li class="list-group-item" id="list1">
-            <%= image_tag 'ra-mennmann.jpeg',:class => "icon", :size => "50x50"%>
-            〇〇さん
+            <%= image_tag post.user.avatar,:class => "icon", :size => "50x50"%>
+            <%= post.user.nickname%>
         </li>
-        <li class="list-group-item" id="list1">ラーメン二郎（二郎系）</li>
-        <li class="list-group-item" id="list3">超高カロリー</li>
+        <li class="list-group-item" id="list3"><%=post.impressions%></li>
         <li class="list-group-item ramen-image" id="list4">
-            <%= image_tag 'jirou.png', class: 'ra-ime'%>
-            <h2 class="ramen-image-title">{{ title }}</h2>
-            <h3 class="ramen-image-genre">{{ ragen }}</h3>
+            <%= image_tag post.image, class: 'ra-ime'%>
+            <h3 class="ramen-image-genre"><%= post.genre.genre%></h3>
         </li>
         <li class="list-group-item" id="list5">
             <a href="#" class="btn btns">いいね！</a>

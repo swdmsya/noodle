@@ -43,11 +43,9 @@ ActiveRecord::Schema.define(version: 2019_01_30_020442) do
     t.text "impressions"
     t.integer "genre_id", default: 10
     t.integer "user_id"
-    t.integer "shop_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["genre_id"], name: "index_posts_on_genre_id"
-    t.index ["shop_id"], name: "index_posts_on_shop_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
