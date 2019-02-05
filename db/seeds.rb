@@ -49,5 +49,6 @@ followers.each { |follower| follower.follow(user) }
     post = user.posts.new(impressions: content,genre_id: 2)
     post.image.attach(io: File.open("#{Rails.root}/app/assets/images/jirou.png"),
     filename: "jirou.png", content_type: "image/png")
+    post.save
   end
 end
