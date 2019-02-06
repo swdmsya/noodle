@@ -32,4 +32,12 @@ has_many :shops, through: :posts
     following_relationships.find_by(following_id: other_user.id).destroy
   end
 
+  def following_posts
+    user_followings = current_user.followings
+    user_follow_posts = []
+    user_followings.each do |u|
+      user_follow_posts << u.posts
+    end
+  end
+
 end
