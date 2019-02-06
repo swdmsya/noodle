@@ -3,121 +3,122 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .container-fluid{
-  color: #fff;
+    color: #fff;
 }
 .post-btn{
-padding: 4px 7px;
-margin-top: 10px; 
-vertical-align:middle;
-color:#fff;
-background-color: rgba(238, 29, 36, 0.7);
+    padding: 4px 7px;
+    margin-top: 10px; 
+    vertical-align:middle;
+    color:#fff;
+    background-color: rgba(238, 29, 36, 0.7);
 }
 .header-height{
-background-color: #fff;
-position:fixed;
-top: 0;
-width:100%;
-height: 90px;
-z-index: 1;
+    background-color: #fff;
+    position:fixed;
+    top: 0;
+    width:100%;
+    height: 100px;
+    z-index: 1;
 }
 .kensaku{
-position:absolute;
-right:10px;
-padding-top:5px;
-padding-bottom:5px;
-margin: 0;
+    position:absolute;
+    right:10px;
+    padding-top:5px;
+    padding-bottom:5px;
+    margin: 0;
 }
 .form-color{
-background-color: #f0eef3;
+    background-color: #f0eef3;
 }
 #new{
-  @media (max-width: 991px){
-    .container{
-      margin: 0;
-      width:100vw;
-      text-align: center;
+    @media (max-width: 991px){
+        .container{
+            margin: 0;
+            width:100vw;
+            text-align: center;
+        }
     }
-  }
-  background-color: #f5f8fa;
-  padding-bottom: 15px;
-  height: 100vh;
-  padding-top: 50px;
-  .content{
-    background-color: #fff;
-    padding-top: 30px;
-    border-radius: 40px;
-    width: 700px;
-    margin-top: 60px;
-  }
-  p{
-    display: inline;
-  }
-  .genre-select{
-    padding-bottom: 20px;
-  }
-  .hidden{
-    display: none;
-  }
-  .label-block{
-    display: block;
-    clear: both;
-  }
-  .new-image{
-    width: 100%;
-    height: 100%;
-  }
-  .shop-input{
-    border-radius: 10px;
-    margin-top: 15px;
-  }
-  .shop-list{
-    list-style: none;
-  }
-  .image-place{
-    height: 360px;
-    background-color: #f0eef3;
-    margin-bottom: 20px;
-  }
-  .ramen-image{
-    position: relative;
-    margin-bottom: 20px;
-    height: 100%;
-    width: 100%;
-    .ramen-image-title{
-      position: absolute;
-      color: white;
-      top: 10px;
-      left: 20px;
+    background-color: #f5f8fa;
+    padding-bottom: 15px;
+    height: 100vh;
+    padding-top: 50px;
+    .content{
+        background-color: #fff;
+        padding-top: 30px;
+        border-radius: 40px;
+        width: 700px;
+        margin-top: 60px;
     }
-    .ramen-image-genre{
-      position: absolute;
-      color: #fff;
-      bottom: 10px;
-      left: 20px;
+    p{
+        display: inline;
     }
-  }
-  .review{
-    border-radius: 2px;
-    width: 100%;
-    height: 80px;
-  }
-  .btn-ramen{
-    background-color: rgba(238, 29, 36, 0.7);
-    color: #fff;
-    margin-bottom: 30px;
-  }
-  .credit{
-    position: fixed;
-    bottom: 0;
-    left: 10px;
-  }
-  .btn-place{
-    width: 100%;
-    padding-left: 45%;
-  }
+    .genre-select{
+        padding-bottom: 20px;
+    }
+    .hidden{
+        display: none;
+    }
+    .label-block{
+        display: block;
+        clear: both;
+    }
+    .new-image{
+        width: 100%;
+        height: 100%;
+    }
+    .shop-input{
+        border-radius: 10px;
+        margin-top: 15px;
+    }
+    .shop-list{
+        list-style: none;
+    }
+    .image-place{
+        height: 360px;
+        background-color: #f0eef3;
+        margin-bottom: 20px;
+    }
+    .ramen-image{
+        position: relative;
+        margin-bottom: 20px;
+        height: 100%;
+        width: 100%;
+        .ramen-image-title{
+            position: absolute;
+            color: white;
+            top: 10px;
+            left: 20px;
+        }
+        .ramen-image-genre{
+            position: absolute;
+            color: #fff;
+            bottom: 10px;
+            left: 20px;
+        }
+    }
+    .review{
+        border-radius: 2px;
+        width: 100%;
+        height: 80px;
+    }
+    .btn-ramen{
+        background-color: rgba(238, 29, 36, 0.7);
+        color: #fff;
+        margin-bottom: 30px;
+    }
+    .credit{
+        position: fixed;
+        bottom: 0;
+        left: 10px;
+    }
+    .btn-place{
+        width: 100%;
+        padding-left: 45%;
+    }
 }
 
 #index{
+
   .top{
     margin-top:20px;
   }
@@ -127,79 +128,107 @@ background-color: #f0eef3;
     .profile{
       margin: auto 0;
 
-      .icon{
-        width: 180px;
-        border-radius: 50%;
-      }
-    }
+
+            .icon{
+                width: 180px;
+                border-radius: 50%;
+            }
+        }
     }
     .ramen-image{
-      position: relative;
-      .ra-ime{
-        width:100%;
-        height: 100%;
-      }
-      .ramen-image-title{
+        position: relative;
+        .ra-ime{
+            width:100%;
+            height: 100%;
+        }
+        .ramen-image-title{
+            position: absolute;
+            color: white;
+            top: 10px;
+            left: 20px;
+        }
+        .ramen-image-genre{
+            position: absolute;
+            color: #fff;
+            bottom: 10px;
+            left: 20px;
+        }
+    }
+    .main-tab{
+        background-color: rgba(238, 29, 36, 0.7);
+        color: #fff;
+    }
+    .list-group{
+        margin-top:20px;
+        .icon{
+            border-radius: 50%;
+        }
+    }
+    .btns{
+        margin-right:10px;
+        background-color: rgba(238, 29, 36, 0.7);
+        color: #fff;
+    }
+    .title{
+        background-color: rgba(238, 29, 36, 0.7);
+        color: #fff;
+    }
+    .ranking-ime{
+        width: 100%;
+    }
+    .ramen-image-title{
         position: absolute;
         color: white;
         top: 10px;
         left: 20px;
-      }
-      .ramen-image-genre{
-        position: absolute;
-        color: #fff;
-        bottom: 10px;
-        left: 20px;
-      }
     }
-    .main-tab{
-      background-color: rgba(238, 29, 36, 0.7);
-      color: #fff;
-      }
-    .list-group{
-      margin-top:20px;
-      .icon{
-        border-radius: 50%;
-      }
+    @media (max-width: 991px){
+        .rank{
+            display: none;
+        }
+        .content{
+            width:100vw;
+        }
+        .main{
+            margin:0;
+        }
     }
-    .btns{
-      margin-right:10px;
-      background-color: rgba(238, 29, 36, 0.7);
-      color: #fff;
-    }
-    .title{
-      background-color: rgba(238, 29, 36, 0.7);
-      color: #fff;
-    }
-    .ranking-ime{
-      width: 100%;
-    }
-    .ramen-image-title{
-      position: absolute;
-      color: white;
-      top: 10px;
-      left: 20px;
-    }
-   @media (max-width: 991px){
-    .rank{
-      display: none;
-    }
-    .content{
-      width:100vw;
-    }
-    .main{
-      margin:0;
-    }
+    @media (min-width: 992px){
+        .min_rank{
+            display: none;
+        }
    }
-   @media (min-width: 992px){
-     .min_rank{
-       display: none;
-     }
-   }
-   .nav-size{
-     height:50px;
-     width:100px;
-     float:left;
-   }
+    .nav-size{
+        height:50px;
+        width:100px;
+        float:left;
+    }
 }
 
+#show{
+    width:100%;
+    background-color: #cbe2f1;
+    .post{
+        width:600px;
+        height:100%;
+        padding-top:150px;
+        padding-left: 50px;
+        padding-bottom:100px;
+        .ra-ime{
+            width:100%;
+            height:100%;
+        }
+        .item1{
+            height:85px;
+            .name{
+                position: relative;
+                left:20px;
+                top:25px;
+            }
+        }
+        .iine{
+            margin: 0 auto;
+        }
+    }
+    
+}

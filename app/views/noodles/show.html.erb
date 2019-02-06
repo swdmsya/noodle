@@ -1,2 +1,17 @@
-<h1>Noodles#show</h1>
-<p>Find me in app/views/noodles/show.html.erb</p>
+<div id="show">
+    <%= render partial: 'shared/header' %>
+    <div class="post">
+        <li class="list-group-item item1">
+            <%= image_tag @post.user.avatar,:class => "icon", :size => "30x30"%>
+            <div class="name"><%= @post.user.nickname%></div>
+        </li>
+        <li class="list-group-item"><%= @post.impressions%></li>
+        <li class="list-group-item ramen-image">
+            <%= image_tag @post.image, class: 'ra-ime'%>
+            <h3 class="ramen-image-genre"><%= @post.genre.genre%></h3>
+        </li>
+        <li class="list-group-item">
+            <a href="#" class="btn btns iine">いいね！</a>
+        </li>
+    </div>
+</div>
