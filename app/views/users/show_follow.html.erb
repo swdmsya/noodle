@@ -11,7 +11,7 @@
 <% @user.followings.each do |user| %>
   <div class="col-xs-6 col-md-3">
     <div class="thumbnail">
-      <img src="http://bootstrap3.cyberlab.info/img/sample-256x256.png", class="icon">
+      <%= image_tag user.avatar,class: "icon"%>
       <div class="caption">
         <h3><%= user.nickname %>さん</h3>
         <h5 class="member">フォロー：<%= user.followings.count %></h5>

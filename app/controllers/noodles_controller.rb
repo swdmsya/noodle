@@ -2,7 +2,7 @@ class NoodlesController < ApplicationController
   before_action :move_to_index, except: :index
 
   def index
-    @posts = Post.all.order("created_at DESC")
+    @posts = Post.all.order("created_at DESC").page(params[:page]).per(10)
   end
 
   def show

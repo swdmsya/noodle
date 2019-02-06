@@ -118,11 +118,16 @@
 }
 
 #index{
-    background-color: #f5f8fa;
-    .main{
-        padding-top: 100px;
-        .profile{
-            margin: auto 0;
+
+  .top{
+    margin-top:20px;
+  }
+  background-color: #f5f8fa;
+  .main{
+    padding-top: 100px;
+    .profile{
+      margin: auto 0;
+
 
             .icon{
                 width: 180px;
