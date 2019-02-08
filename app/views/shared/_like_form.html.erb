@@ -2,15 +2,15 @@
     <% if post.user_liked?(current_user.id) %>
         <%= link_to noodle_like_path(noodle_id: post.id, id: current_user.id), method: :delete, id: "like-button", remote: true do %>
         <%= fa_icon 'heart', class: "red-heart btn"%>
-        <span><%= post.likes_count %></span>
+        <span><%= post.likes_count %>件のいいね</span>
         <% end %>
     <% else %>
         <%= link_to noodle_likes_path(noodle_id: post.id), method: :post, id: "like-button", remote: true do %>
         <%= fa_icon 'heart', class: "btn btns" %>
-        <span><%= post.likes_count %></span>
+        <span><%= post.likes_count %>件のいいね</span>
         <% end %>
     <% end %>
 <% else %>
     <%= fa_icon 'heart', class: "btn btns" %>
-    <span><%= post.likes_count %></span>
+    <span><%= post.likes_count %>件のいいね</span>
 <% end %>
