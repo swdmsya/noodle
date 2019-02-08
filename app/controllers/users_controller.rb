@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def index
-    @posts = Post.where(user_id: current_user.followings).order("created_at DESC").page(params[:page]).per(10)
+    @posts = Post.where(user_id: current_user.followings).order("created_at DESC").page(params[:page]).per(5)
     @like = Like.new
   end
   
