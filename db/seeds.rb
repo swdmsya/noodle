@@ -46,7 +46,7 @@ followers.each { |follower| follower.follow(user) }
 5.times do
   content = Faker::Lorem.sentence(5)
   users.each do |user|
-    post = user.posts.new(impressions: content,genre_id: rand(1..10))
+    post = user.posts.new(impressions: content,genre_id: rand(1..10),likes_count: 0)
     post.image.attach(io: File.open("#{Rails.root}/app/assets/images/jirou.png"),
     filename: "jirou.png", content_type: "image/png")
     post.save

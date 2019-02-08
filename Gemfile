@@ -85,3 +85,5 @@ gem 'mini_magick'
 gem 'rb-readline'
 
 gem 'vue-rails-form-builder', '~> 0.8.2'
+
+gem "font-awesome-rails"

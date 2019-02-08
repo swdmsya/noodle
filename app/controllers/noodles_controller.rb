@@ -3,10 +3,12 @@ class NoodlesController < ApplicationController
 
   def index
     @posts = Post.all.order("created_at DESC").page(params[:page]).per(10)
+    @like = Like.new
   end
 
   def show
     @post = Post.find(params[:id])
+    @like = Like.new
   end
 
   def new
@@ -14,7 +16,7 @@ class NoodlesController < ApplicationController
   end
 
   def create
-    @noodle = current_user.posts.build(post_params)
+    @noodle = current_user.posts.build(post_params,likes_count: 0)
     if @noodle.save
       redirect_to action: :index
     else
