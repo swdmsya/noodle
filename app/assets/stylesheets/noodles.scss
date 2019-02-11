@@ -211,30 +211,67 @@
     }
 }
 
-#show{
-    width:100%;
-    background-color: #cbe2f1;
-    .post{
-        width:600px;
-        height:100%;
-        padding-top:150px;
-        padding-left: 50px;
-        padding-bottom:100px;
-        .ra-ime{
-            width:100%;
-            height:100%;
-        }
-        .item1{
-            height:85px;
-            .name{
-                position: relative;
-                left:20px;
-                top:25px;
+#post_show{
+    background-color: #f5f8fa;
+    .show-field{
+        background-color: #f5f8fa;
+        padding-top: 150px;
+        .post{
+            width:40%;
+            margin-left: 80px;
+            float: left;
+            .icon{
+                border-radius: 50%;
+            }
+            .ra-ime{
+                width:100%;
+                height: 100%;
+            }
+            .ramen-image-genre{
+                position: absolute;
+                color: #fff;
+                bottom: 10px;
+                left: 20px;
             }
         }
-        .iine{
-            margin: 0 auto;
+        .comments-field{
+            width: 40%;
+            margin-left: 60px;
+            padding-bottom: 100px;
+            float: left;
+            .comments{
+                background-color:#b1adb14b;
+                height: 430px;
+                width: 100%;
+                overflow:auto;
+                border: solid 1px;
+                .comm{
+                    margin-left: 10px;
+                    margin-right: 10px;
+                    padding: 5px;
+                    border: solid 0.5px;
+                    background-color: white;
+                }
+                a {
+                    color: rgba(238, 29, 36, 0.7);
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+            .comment-form-field{
+                background-color:rgba(238, 29, 36, 0.7);
+                height:50px;
+                width:100%;
+                .comment-form{
+                    padding-top:7px;
+                    .form{
+                        height: 33px;
+                        width:85%;
+                    }
+                }
+            }
         }
+        
     }
-    
 }

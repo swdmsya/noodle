@@ -1,17 +1,46 @@
-<div id="show">
+<div id="post_show">
     <%= render partial: 'shared/header' %>
-    <div class="post">
-        <li class="list-group-item item1">
-            <%= image_tag @post.user.avatar,:class => "icon", :size => "30x30"%>
-            <div class="name"><%= @post.user.nickname%></div>
-        </li>
-        <li class="list-group-item"><%= @post.impressions%></li>
-        <li class="list-group-item ramen-image">
-            <%= image_tag @post.image, class: 'ra-ime'%>
-            <h3 class="ramen-image-genre"><%= @post.genre.genre%></h3>
-        </li>
-        <li class="list-group-item">
-            <a href="#" class="btn btns iine">いいね！</a>
-        </li>
+    <div class="show-field container">
+        <div class="row">
+            <ul class="list-group post col-md-6 col-sm-6 col-xs-6">
+                <li class="list-group-item" id="list1">
+                    <%= image_tag @post.user.avatar,:class => "icon", :size => "50x50"%>
+                    <%= @post.user.nickname %>
+                </li>
+                <li class="list-group-item" id="list3"><%= @post.impressions%></li>
+                <li class="list-group-item ramen-image" id="list4">
+                    <%= image_tag @post.image, class: 'ra-ime'%>
+                    <h3 class="ramen-image-genre"><%= @post.genre.genre%></h3>
+                </li>
+                <li class="list-group-item" id="list5">
+                    <%= render partial: 'shared/like_form',locals:{post: @post} %>
+                </li>
+            </ul>
+            <div class="comments-field col-md-6 col-sm-6 col-xs-6">
+                <div class="comments">
+                    <% if @comments %>
+                        <% @comments.each do |comment| %>
+                            <p class="comm">
+                                <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
+                                <%= comment.text %>
+                                <% if user_signed_in? && current_user.id == comment.user_id %>
+                                    <a>
+                                        <%= link_to "削除",noodle_comment_path(noodle_id: @post.id, id: comment.id), method: :delete %>
+                                    <a>
+                                <% end %>
+                            </p>
+                    <% end %>
+                <% end %>
+                </div>
+                <div class="comment-form-field">
+                    <div class="comment-form">
+                        <%= form_with model: @comment, url: noodle_comments_path(noodle_id: @post.id) do |f| %>
+                            <%= f.text_field :text, placeholder: "コメント(50文字以内)", maxlength: "50", class: "form"%>
+                            <%= f.submit "送信", class: "btn btns"%>
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
