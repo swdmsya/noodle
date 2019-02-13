@@ -2,11 +2,14 @@ class NoodlesController < ApplicationController
   before_action :move_to_index, except: :index
 
   def index
-    @posts = Post.all.order("created_at DESC").page(params[:page]).per(10)
+    @posts = Post.includes(:user).order("created_at DESC").page(params[:page]).per(5)
+    @like = Like.new
   end
 
   def show
     @post = Post.find(params[:id])
+    @like = Like.new
+    @comments = @post.comments.includes(:user)
   end
 
   def new
@@ -20,6 +23,14 @@ class NoodlesController < ApplicationController
     else
       redirect_to action: :new
     end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+        if @post.user_id == current_user.id
+          comment.destroy
+          redirect_back(fallback_location: root_path)
+        end
   end
 
   def edit

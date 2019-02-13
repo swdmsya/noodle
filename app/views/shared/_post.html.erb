@@ -9,7 +9,11 @@
             <h3 class="ramen-image-genre"><%= post.genre.genre%></h3>
         </li>
         <li class="list-group-item" id="list5">
-            <a href="#" class="btn btns">いいね！</a>
             <%= link_to "コメント", noodle_path(post.id), method: :get, class: "btn btns"%>
+            <% if user_signed_in? && current_user.id == post.user_id %>
+                <%= link_to "削除",noodle_path(id: post.id), method: :delete, class: "btn btns" %>
+            <% end %>
+            <%= render partial: 'shared/like_form',locals:{post: post} %>
         </li>
+        
     </ul>
