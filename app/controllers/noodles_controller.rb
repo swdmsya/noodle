@@ -2,7 +2,11 @@ class NoodlesController < ApplicationController
   before_action :move_to_index, except: :index
 
   def index
-    @posts = Post.includes(:user).order("created_at DESC").page(params[:page]).per(5)
+    if params[:genre] == nil
+      @posts = Post.includes(:user).order("created_at DESC").page(params[:page]).per(5)
+    else
+      @posts = Post.where(genre_id: params[:genre]).order("created_at DESC").page(params[:page]).per(5)
+    end
     @like = Like.new
     @top_five = Post.includes(:user).order("likes_count DESC")
   end

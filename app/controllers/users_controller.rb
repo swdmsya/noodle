@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
 
   def index
-    @posts = Post.where(user_id: current_user.followings).order("created_at DESC").page(params[:page]).per(5)
+    if params[:genre] == nil
+      @posts = Post.where(user_id: current_user.followings).order("created_at DESC").page(params[:page]).per(5)
+    else
+      @posts = Post.where(user_id: current_user.followings, genre_id: params[:genre]).order("created_at DESC").page(params[:page]).per(5)
+    end
     @like = Like.new
     @top_five = Post.where(user_id: current_user.followings).order("likes_count DESC")
   end
