@@ -4,6 +4,7 @@ class NoodlesController < ApplicationController
   def index
     @posts = Post.includes(:user).order("created_at DESC").page(params[:page]).per(5)
     @like = Like.new
+    @top_five = Post.includes(:user).order("likes_count DESC")
   end
 
   def show
