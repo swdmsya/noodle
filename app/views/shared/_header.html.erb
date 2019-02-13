@@ -23,11 +23,13 @@
           	<button type="submit" class="btn btn-default">検索</button>
         </form>
         <div class="tabs">
-        <% if request.fullpath == "/users" %>
-            <a href="/" class="btn btns">全てのユーザーの投稿をみる</a>
-        <% else%>
-            <a href="/users" class="btn btns">フォローしているユーザーの投稿をみる</a>
-        <% end %>
+        <% if user_signed_in?%>
+            <% if request.fullpath == "/users" %>
+                <a href="/" class="btn btns">全てのユーザーの投稿をみる</a>
+            <% else%>
+                <a href="/users" class="btn btns">フォローしているユーザーの投稿をみる</a>
+            <% end %>
+        <% end%>
         </div>
     </div>
 </div>
