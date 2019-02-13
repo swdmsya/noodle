@@ -3,10 +3,11 @@ class NoodlesController < ApplicationController
 
   def index
     if params[:genre] == nil
-      @posts = Post.includes(:user).order("created_at DESC").page(params[:page]).per(5)
+      @posts = Post.includes(:user)
     else
-      @posts = Post.where(genre_id: params[:genre]).order("created_at DESC").page(params[:page]).per(5)
+      @posts = Post.where(genre_id: params[:genre])
     end
+    @posts = @posts.order("created_at DESC").page(params[:page]).per(5)
     @like = Like.new
     @top_five = Post.includes(:user).order("likes_count DESC")
   end
