@@ -1,11 +1,33 @@
 <ul class="list-group list-rank">
-  <li class="list-group-item title">ランキング</li>
-  <li class="list-group-item">
-    <%= image_tag 'jirou.png', class: 'ranking-ime'%>
-    <h2 class="ramen-image-title">{{ １位 }}</h2>
-  </li>
-  <li class="list-group-item">２位</li>
-  <li class="list-group-item">３位</li>
-  <li class="list-group-item">４位</li>
-  <li class="list-group-item">５位</li>
+  	<li class="list-group-item title">いいね数ランキング</li>
+  	<li class="list-group-item">
+    	<%= link_to noodle_path(@top_five[0].id), method: :get do %>
+      		<%= image_tag @top_five[0].image, class: 'ranking-ime'%>
+      		<h2 class="ramen-image-title">1位</h2>
+    	<% end%>
+  	</li>
+	<li class="list-group-item">
+    	<%= link_to noodle_path(@top_five[1].id), method: :get do %>
+      		<%= image_tag @top_five[1].image, class: 'ranking-ime'%>
+      		<h2 class="ramen-image-title">2位</h2>
+    	<% end%>
+  	</li>
+	<li class="list-group-item">
+    	<%= link_to noodle_path(@top_five[2].id), method: :get do %>
+      		<%= image_tag @top_five[2].image, class: 'ranking-ime'%>
+      		<h2 class="ramen-image-title">3位</h2>
+    	<% end%>
+  	</li>
+	<li class="list-group-item">
+    	<%= link_to noodle_path(@top_five[3].id), method: :get do %>
+      		<%= image_tag @top_five[3].image, class: 'ranking-ime'%>
+      		<h2 class="ramen-image-title">4位</h2>
+    	<% end%>
+  	</li>
+	<li class="list-group-item">
+    	<%= link_to noodle_path(@top_five[4].id), method: :get do %>
+      		<%= image_tag @top_five[4].image, class: 'ranking-ime'%>
+      		<h2 class="ramen-image-title">5位</h2>
+    	<% end%>
+  	</li>
 </ul>
