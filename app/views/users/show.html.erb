@@ -1,219 +1,68 @@
 <div id="user_show">
-  <% @user ||= current_user %>
+  	<% @user ||= current_user %>
+  	<!-- header -->
+  	<nav class="navbar navbar-default">
+    	<div class="container-fluid header-height">
+      		<div class="navbar-header">
+        		<a class="navbar-brand" href="/">
+          			<%= image_tag "logo.png", size: "60x60", class: "logo" %>
+        		</a>
+        		<div class="user_info">
+          			<%= image_tag @user.avatar, class: 'icon'%>
+        			<div class="user_in">
+            			<div class="user_name">
+              				<h3 class="name"><%=@nickname%>さん</h3>
+              				<h4 class="ikitai">総いいね数：
+							  	<strong class="stat">
+                					<%= @like_count%>
+              					</strong>
+							</h4>
+            			</div>
+            			<div class="follows">
+              				<% @user ||= current_user %>
+              				<h4 class="follow"><span>フォロー数：</span>
+                				<a href="<%= following_user_path(@user) %>">
+                  					<strong id="following" class="stat">
+                    					<%= @user.followings.count %>人
+                  					</strong>
+                				</a>
+              				</h4>
+              				<h4 class="follower"><span>フォロワー数：</span>
+                				<a href="<%= followers_user_path(@user) %>">
+                  					<strong id="followers" class="stat">
+                    					<%= @user.followers.count %>人
+                  					</strong>
+                				</a>
+              				</h4>
+            			</div>
+          			</div>
+          		<%= render 'follow_form' %>
+        		</div>
+      		</div>
+    	</div>
+  	</nav>
   <!-- header -->
-  <nav class="navbar navbar-default">
-    <div class="container-fluid header-height">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="/">
-          ロゴ
-        </a>
-        <div class="user_info">
-          <%= image_tag 'ra-mennmann.jpeg', class: 'icon'%>
-          <div class="user_in">
-            <div class="user_name">
-              <h3 class="name"><%=@nickname%>さん</h3>
-              <h4 class="ikitai">行きたい：〇〇</h4>
-            </div>
-            <div class="follows">
-              <% @user ||= current_user %>
-              <h4 class="follow"><span>フォロー数：</span>
-                <a href="<%= following_user_path(@user) %>">
-                  <strong id="following" class="stat">
-                    <%= @user.followings.count %>人
-                  </strong>
-                </a>
-              </h4>
-              <h4 class="follower"><span>フォロワー数：</span>
-                <a href="<%= followers_user_path(@user) %>">
-                  <strong id="followers" class="stat">
-                    <%= @user.followers.count %>人
-                  </strong>
-                </a>
-              </h4>
-            </div>
-          </div>
-
-          <%= render 'follow_form' %>
-
-        </div>
-      </div>
-    </div>
-  </nav>
-  <!-- header -->
-  <!-- contents -->
-  <div class="container contents">
-    <div class="row">
-      <ul class="list-group my_list col-md-4 col-sm-4 col-xs-4">
-        <li class="list-group-item" id="list1">ラーメン二郎（二郎系）</li>
-        <li class="list-group-item" id="list3">超高カロリー</li>
-        <li class="list-group-item ramen-image" id="list4">
-          <%= image_tag 'jirou.png', class: 'ra-ime'%>
-          <h2 class="ramen-image-title">{{ title }}</h2>
-          <h3 class="ramen-image-genre">{{ ragen }}</h3>
-        </li>
-        <li class="list-group-item" id="list5">
-          <a href="#" class="btn btns">行きたい！</a>
-          <a href="#" class="btn btns">コメント</a>
-          <a href="#" class="btn btns">マップ</a>
-        </li>
-      </ul>
-      <!-- contents -->
-      <!-- copy -->
-      <ul class="list-group my_list col-md-4 col-sm-4 col-xs-4">
-        <li class="list-group-item" id="list1">ラーメン二郎（二郎系）</li>
-        <li class="list-group-item" id="list3">超高カロリー</li>
-        <li class="list-group-item ramen-image" id="list4">
-          <%= image_tag 'jirou.png', class: 'ra-ime'%>
-          <h2 class="ramen-image-title">{{ title }}</h2>
-          <h3 class="ramen-image-genre">{{ ragen }}</h3>
-        </li>
-        <li class="list-group-item" id="list5">
-          <a href="#" class="btn btns">行きたい！</a>
-          <a href="#" class="btn btns">コメント</a>
-          <a href="#" class="btn btns">マップ</a>
-        </li>
-      </ul>
-      <ul class="list-group my_list col-md-4 col-sm-4 col-xs-4">
-        <li class="list-group-item" id="list1">ラーメン二郎（二郎系）</li>
-        <li class="list-group-item" id="list3">超高カロリー</li>
-        <li class="list-group-item ramen-image" id="list4">
-          <%= image_tag 'jirou.png', class: 'ra-ime'%>
-          <h2 class="ramen-image-title">{{ title }}</h2>
-          <h3 class="ramen-image-genre">{{ ragen }}</h3>
-        </li>
-        <li class="list-group-item" id="list5">
-          <a href="#" class="btn   btns">行きたい！</a>
-          <a href="#" class="btn   btns">コメント</a>
-          <a href="#" class="btn   btns">マップ</a>
-        </li>
-      </ul>
-      <ul class="list-group my_list col-md-4 col-sm-4 col-xs-4">
-        <li class="list-group-item" id="list1">ラーメン二郎（二郎系）</li>
-        <li class="list-group-item" id="list3">超高カロリー</li>
-        <li class="list-group-item ramen-image" id="list4">
-          <%= image_tag 'jirou.png', class: 'ra-ime'%>
-          <h2 class="ramen-image-title">{{ title }}</h2>
-          <h3 class="ramen-image-genre">{{ ragen }}</h3>
-        </li>
-        <li class="list-group-item" id="list5">
-          <a href="#" class="btn   btns">行きたい！</a>
-          <a href="#" class="btn   btns">コメント</a>
-          <a href="#" class="btn   btns">マップ</a>
-        </li>
-      </ul>
-      <ul class="list-group my_list col-md-4 col-sm-4 col-xs-4">
-        <li class="list-group-item" id="list1">ラーメン二郎（二郎系）</li>
-        <li class="list-group-item" id="list3">超高カロリー</li>
-        <li class="list-group-item ramen-image" id="list4">
-          <%= image_tag 'jirou.png', class: 'ra-ime'%>
-          <h2 class="ramen-image-title">{{ title }}</h2>
-          <h3 class="ramen-image-genre">{{ ragen }}</h3>
-        </li>
-        <li class="list-group-item" id="list5">
-          <a href="#" class="btn   btns">行きたい！</a>
-          <a href="#" class="btn   btns">コメント</a>
-          <a href="#" class="btn   btns">マップ</a>
-        </li>
-      </ul>
-      <ul class="list-group my_list col-md-4 col-sm-4 col-xs-4">
-        <li class="list-group-item" id="list1">ラーメン二郎（二郎系）</li>
-        <li class="list-group-item" id="list3">超高カロリー</li>
-        <li class="list-group-item ramen-image" id="list4">
-          <%= image_tag 'jirou.png', class: 'ra-ime'%>
-          <h2 class="ramen-image-title">{{ title }}</h2>
-          <h3 class="ramen-image-genre">{{ ragen }}</h3>
-        </li>
-        <li class="list-group-item" id="list5">
-          <a href="#" class="btn   btns">行きたい！</a>
-          <a href="#" class="btn   btns">コメント</a>
-          <a href="#" class="btn   btns">マップ</a>
-        </li>
-      </ul>
-      <ul class="list-group my_list col-md-4 col-xs-4">
-        <li class="list-group-item" id="list1">ラーメン二郎（二郎系）</li>
-        <li class="list-group-item" id="list3">超高カロリー</li>
-        <li class="list-group-item ramen-image" id="list4">
-          <%= image_tag 'jirou.png', class: 'ra-ime'%>
-          <h2 class="ramen-image-title">{{ title }}</h2>
-          <h3 class="ramen-image-genre">{{ ragen }}</h3>
-        </li>
-        <li class="list-group-item" id="list5">
-          <a href="#" class="btn   btns">行きたい！</a>
-          <a href="#" class="btn   btns">コメント</a>
-          <a href="#" class="btn   btns">マップ</a>
-        </li>
-      </ul>
-      <ul class="list-group my_list col-md-4 col-sm-4 col-xs-4">
-        <li class="list-group-item" id="list1">ラーメン二郎（二郎系）</li>
-        <li class="list-group-item" id="list3">超高カロリー</li>
-        <li class="list-group-item ramen-image" id="list4">
-          <%= image_tag 'jirou.png', class: 'ra-ime'%>
-          <h2 class="ramen-image-title">{{ title }}</h2>
-          <h3 class="ramen-image-genre">{{ ragen }}</h3>
-        </li>
-        <li class="list-group-item" id="list5">
-          <a href="#" class="btn   btns">行きたい！</a>
-          <a href="#" class="btn   btns">コメント</a>
-          <a href="#" class="btn   btns">マップ</a>
-        </li>
-      </ul>
-      <ul class="list-group my_list col-md-4 col-sm-4 col-xs-4">
-        <li class="list-group-item" id="list1">ラーメン二郎（二郎系）</li>
-        <li class="list-group-item" id="list3">超高カロリー</li>
-        <li class="list-group-item ramen-image" id="list4">
-          <%= image_tag 'jirou.png', class: 'ra-ime'%>
-          <h2 class="ramen-image-title">{{ title }}</h2>
-          <h3 class="ramen-image-genre">{{ ragen }}</h3>
-        </li>
-        <li class="list-group-item" id="list5">
-          <a href="#" class="btn   btns">行きたい！</a>
-          <a href="#" class="btn   btns">コメント</a>
-          <a href="#" class="btn   btns">マップ</a>
-        </li>
-      </ul>
-      <ul class="list-group my_list col-md-4 col-sm-4 col-xs-4">
-        <li class="list-group-item" id="list1">ラーメン二郎（二郎系）</li>
-        <li class="list-group-item" id="list3">超高カロリー</li>
-        <li class="list-group-item ramen-image" id="list4">
-          <%= image_tag 'jirou.png', class: 'ra-ime'%>
-          <h2 class="ramen-image-title">{{ title }}</h2>
-          <h3 class="ramen-image-genre">{{ ragen }}</h3>
-        </li>
-        <li class="list-group-item" id="list5">
-          <a href="#" class="btn   btns">行きたい！</a>
-          <a href="#" class="btn   btns">コメント</a>
-          <a href="#" class="btn   btns">マップ</a>
-        </li>
-      </ul>
-      <ul class="list-group my_list col-md-4 col-sm-4 col-xs-4">
-        <li class="list-group-item" id="list1">ラーメン二郎（二郎系）</li>
-        <li class="list-group-item" id="list3">超高カロリー</li>
-        <li class="list-group-item ramen-image" id="list4">
-          <%= image_tag 'jirou.png', class: 'ra-ime'%>
-          <h2 class="ramen-image-title">{{ title }}</h2>
-          <h3 class="ramen-image-genre">{{ ragen }}</h3>
-        </li>
-        <li class="list-group-item" id="list5">
-          <a href="#" class="btn   btns">行きたい！</a>
-          <a href="#" class="btn   btns">コメント</a>
-          <a href="#" class="btn   btns">マップ</a>
-        </li>
-      </ul>
-      <ul class="list-group my_list col-md-4 col-sm-4 col-xs-4">
-        <li class="list-group-item" id="list1">ラーメン二郎（二郎系）</li>
-        <li class="list-group-item" id="list3">超高カロリー</li>
-        <li class="list-group-item ramen-image" id="list4">
-          <%= image_tag 'jirou.png', class: 'ra-ime'%>
-          <h2 class="ramen-image-title">{{ title }}</h2>
-          <h3 class="ramen-image-genre">{{ ragen }}</h3>
-        </li>
-        <li class="list-group-item" id="list5">
-          <a href="#" class="btn   btns">行きたい！</a>
-          <a href="#" class="btn   btns">コメント</a>
-          <a href="#" class="btn   btns">マップ</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <!-- copy -->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 col-sm-4 col-xs-4">
+      			<% @posts.each do |post| %>
+          			    <ul class="list-group">
+							<li class="list-group-item" id="list3"><%= post.impressions%></li>
+							<li class="list-group-item ramen-image" id="list4">
+								<%= image_tag post.image, class: 'ra-ime'%>
+								<h3 class="ramen-image-genre"><%= post.genre.genre%></h3>
+							</li>
+							<li class="list-group-item" id="list5">
+								<%= link_to "コメント", noodle_path(post.id), method: :get, class: "btn btns"%>
+								<% if user_signed_in? && current_user.id == post.user_id %>
+									<%= link_to "削除",noodle_path(id: post.id), method: :delete, class: "btn btns" %>
+								<% end %>
+								<%= render partial: 'shared/like_form',locals:{post: post} %>
+							</li>
+							
+						</ul>
+      			<% end %>
+    		</div>
+		</div>
+	</div>
 </div><!-- id='show' -->

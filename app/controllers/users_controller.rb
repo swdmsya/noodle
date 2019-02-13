@@ -8,6 +8,12 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @nickname = @user.nickname
+    @posts = Post.where(id: params[:id])
+    @like_count = 0
+    @posts.each do |p|
+      like = p.likes_count
+      @like_count += like
+    end
   end
 
   def following
