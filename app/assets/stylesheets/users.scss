@@ -145,10 +145,19 @@
   	.kensaku{
     	position:absolute;
 		right:10px;
-    	padding-top:5px;
-   	 	padding-bottom:5px;
-    	margin: 0;
-  	}
+    	top: 23px;
+		margin: 0;
+		.form-size{
+			height: 35px;
+			width: 170px;
+			color: black
+		}
+	}
+	.tabs{
+		position:absolute;
+		right: 250px;
+		top: 23px;
+	}
   	.form-color{
     	background-color: #f0eef3;
   	}
