@@ -5,6 +5,13 @@
         <div class="caption">
           <% @user ||= current_user %>
           <h3><%= @user.nickname%><span>さん</span></h3>
+
+          <p><span>投稿数：</span>
+              <strong class="stat">
+                <%= Post.where(id: @user.id).count %>
+              </strong>
+          </p>
+          
           <p><span>フォロー数：</span>
             <a href="<%= following_user_path(@user) %>">
               <strong id="following" class="stat">
@@ -19,8 +26,15 @@
               </strong>
             </a>
           </p>
-          <p><a href="users/<%=current_user.id%>" class="btn  btns">マイページ</a>
-            <%= link_to "ログアウト", destroy_user_session_path, method: :delete%></p>
+          <ul>
+            <li>
+              <a href="users/<%=current_user.id%>" class="btn btns">マイページ</a>
+              <a href="noodles/new" class="btn  btns">投稿する</a>
+            </li>
+            <li>
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn"%>
+            </li>
+          </ul>
         </div><!-- /.caption -->
       </div><!-- /.thumbnail -->
       <% else%>
