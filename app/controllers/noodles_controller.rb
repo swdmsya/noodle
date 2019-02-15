@@ -33,12 +33,24 @@ class NoodlesController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
         if @post.user_id == current_user.id
-          comment.destroy
+          @post.hashtag_posts.each do |h|
+            h.delete
+          end
+          @post.delete
           redirect_back(fallback_location: root_path)
         end
   end
 
   def edit
+  end
+
+  def hashtag
+    @user = current_user
+    @tag = Hashtag.find_by(hashname: params[:name])
+    @posts = @tag.posts.build
+    @post  = @tag.posts.page(params[:page])
+    @comment    = Comment.new
+    @comments   = @posts.comments
   end
 
   private
