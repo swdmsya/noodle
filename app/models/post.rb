@@ -26,7 +26,7 @@ class Post < ApplicationRecord
 		post = Post.find_by(id: self.id)
 		hashtags = self.impressions.scan(/[#＃][Ａ-Ｚａ-ｚA-Za-z一-鿆0-9０-９ぁ-ヶｦ-ﾟー]+/)
 		hashtags.uniq.map do |hashtag|
-		  tag = Hashtag.find_or_create_by(hashname: hashtag.downcase.delete('#'))
+		  tag = Hashtag.find_or_create_by(hashname: hashtag.downcase.delete('#').delete('＃'))
 			HashtagPost.create(post_id: post.id, hashtag_id: tag.id)
 		end
 	end
