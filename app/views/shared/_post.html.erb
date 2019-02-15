@@ -1,7 +1,9 @@
     <ul class="list-group">
         <li class="list-group-item" id="list1">
-            <%= image_tag post.user.avatar,:class => "icon", :size => "50x50"%>
-            <%= post.user.nickname %>
+            <%= link_to user_path(id: post.user.id) do%>
+                <%= image_tag post.user.avatar,:class => "icon", :size => "50x50"%>
+                <%= post.user.nickname %>
+            <% end%>
         </li>
         <li class="list-group-item" id="list3"><%= post.impressions%></li>
         <li class="list-group-item ramen-image" id="list4">

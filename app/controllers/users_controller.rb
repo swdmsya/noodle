@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @nickname = @user.nickname
-    @posts = Post.where(id: params[:id])
+    @posts = Post.where(user_id: @user.id)
     @like_count = 0
     @posts.each do |p|
       like = p.likes_count
