@@ -1,12 +1,11 @@
 class UsersController < ApplicationController
-
+  include UsersHelper
   def index
-    if params[:genre] == nil
-      @posts = Post.where(user_id: current_user.followings)
-    else
-      @posts = Post.where(user_id: current_user.followings, genre_id: params[:genre])
+    posts = Post.where(user_id: current_user.followings)
+    if params[:genre]
+      posts = Post.where(user_id: current_user.followings, genre_id: params[:genre])
     end
-    @posts = @posts.order("created_at DESC").page(params[:page]).per(5)
+    @posts = sort(posts)
     @like = Like.new
     @top_five = Post.where(user_id: current_user.followings).order("likes_count DESC")
   end
