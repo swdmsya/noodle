@@ -7,12 +7,13 @@ class NoodlesController < ApplicationController
     if params[:hashtag]
       if hashtag = Hashtag.find_by(hashname: params[:hashtag])
         hashtagpost = HashtagPost.where(hashtag_id: hashtag.id)
-        @posts = [].sort_by{|post| post.created_at}
+        posts = []
         hashtagpost.each do |hp|
           id = hp.post_id
           post = Post.find(id)
-          @posts << post
+          posts << post
         end
+        @posts = posts.sort_by!{|post| post.created_at}.reverse!
       else
         flash[:notice] = "該当するハッシュタグはありませんでした"
         redirect_back(fallback_location: root_path)
