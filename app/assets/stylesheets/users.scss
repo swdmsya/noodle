@@ -2,11 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #user_show{
-  	background-color: #f5f8fa;
+  	background-color: #fcf8e3;
   	@media (max-width: 991px){
         .container{
             margin: 0;
-            width:100vw;
+            width:100%;
             text-align: center;
         }
 	}
@@ -129,7 +129,7 @@
 }
 
 #index{
-  	background-color: #f5f8fa;
+  	background-color: #fcf8e3;
   	.container-fluid{
       	color: #fff;
   	}
@@ -156,12 +156,26 @@
 		.form-size{
 			height: 35px;
 			width: 170px;
+			border-radius: 7%;
 			color: black
 		}
 	}
+	.hashtag{
+		position:absolute;
+		right:250px;
+    	top: 23px;
+		margin: 0;
+		.form-size{
+			height: 35px;
+			width: 170px;
+			border-radius: 7%;
+			color: black
+		}
+
+	}
 	.tabs{
 		position:absolute;
-		right: 250px;
+		right: 490px;
 		top: 23px;
 	}
   	.form-color{
@@ -232,17 +246,23 @@
     	}
     	.main{
       		margin:0;
-    	}
+		}
+		.container {
+            width: 100%;
+        }
    	}
    	@media (min-width: 992px){
      	.min_rank{
        		display: none;
-     	}
+		 }
+		 .container {
+            width: 100%;
+        }
    	}
 }
 
 .show_follow{
-	background-color: #f5f8fa;
+	background-color: #fcf8e3;
 	.head{
 		height: 80px;
 		background-color: #fff;
