@@ -3,10 +3,29 @@ class NoodlesController < ApplicationController
   include NoodlesHelper
   def index
     posts = Post.includes(:user)
-    if params[:genre]
-      posts = posts.where(genre_id: params[:genre])
-    end
     @posts = sort(posts)
+    if params[:hashtag]
+      if hashtag = Hashtag.find_by(hashname: params[:hashtag])
+        hashtagpost = HashtagPost.where(hashtag_id: hashtag.id)
+        @posts = [].sort_by{|post| post.created_at}
+        hashtagpost.each do |hp|
+          id = hp.post_id
+          post = Post.find(id)
+          @posts << post
+        end
+      else
+        flash[:notice] = "該当するハッシュタグはありませんでした"
+        redirect_back(fallback_location: root_path)
+      end
+    end
+    if params[:genre]
+      if params[:genre] == ""
+        flash[:notice] = "ジャンルを選択してください"
+      else
+        posts = posts.where(genre_id: params[:genre])
+        @posts = sort(posts)
+      end
+    end
     @like = Like.new
     @top_five = Post.includes(:user).order("likes_count DESC")
   end
@@ -33,12 +52,24 @@ class NoodlesController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
         if @post.user_id == current_user.id
-          comment.destroy
+          @post.hashtag_posts.each do |h|
+            h.delete
+          end
+          @post.delete
           redirect_back(fallback_location: root_path)
         end
   end
 
   def edit
+  end
+
+  def hashtag
+    @user = current_user
+    @tag = Hashtag.find_by(hashname: params[:name])
+    @posts = @tag.posts.build
+    @post  = @tag.posts.page(params[:page])
+    @comment    = Comment.new
+    @comments   = @posts.comments
   end
 
   private

@@ -2,16 +2,21 @@
   <!-- headerバー -->
   <%= render partial: 'shared/header' %>
   <!-- </nav> -->
-  <div class="container main">
+  <div class="container main bg-warning">
     <div class="row content">
       <!-- left-contents -->
       <%= render partial: 'shared/profile' %>
       <!-- senter-contents -->
     <div class="col-md-6 col-sm-9 col-xs-9">
+      <% if flash[:notice] %>
+        <p><%= flash[:notice] %></p>
+      <% end %>
       <% @posts.each do |post| %>
           <%= render partial: 'shared/post',locals:{post: post}  %>
       <% end %>
-      <%= paginate(@posts) %>
+      <% if params[:page]%>
+        <%= paginate(@posts) %>
+      <% end%>
     </div>
   <!-- 画面幅が991px以上になったら右側に表示　-->
     <div class="col-md-3  rank">

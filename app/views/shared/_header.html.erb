@@ -4,10 +4,16 @@
         <%= image_tag "logo.png", size: "60x60", class: "logo" %>
     </a>
     <div class="collapse navbar-collapse bar" id="navbarEexample3">
+        <form class="navbar-form hashtag" role="search">
+          	<div class="form-group">
+                <input type="text" name="hashtag" value="ハッシュタグ" class="form-size">
+          	</div>
+          	<button type="submit" class="btn btn-default">検索</button>
+        </form>
         <form class="navbar-form kensaku" role="search">
           	<div class="form-group">
 				<select name="genre" size="1" class="form-size">
-                    <option value="">ジャンル</option>
+                    <option value="0">ジャンル</option>
                     <option value="1">豚骨</option>
                     <option value="2">家系</option>
                     <option value="3">二郎系</option>
