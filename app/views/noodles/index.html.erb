@@ -14,7 +14,7 @@
       <% @posts.each do |post| %>
           <%= render partial: 'shared/post',locals:{post: post}  %>
       <% end %>
-      <% if params[:page]%>
+      <% unless params[:hashtag]%>
         <%= paginate(@posts) %>
       <% end%>
     </div>
