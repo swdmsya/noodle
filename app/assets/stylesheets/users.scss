@@ -92,19 +92,16 @@
     	margin-top:20px;
   	}
   	.ramen-image{
-    	position: relative;
-    	.ramen-image-title{
-      		position: absolute;
-      		color: white;
-      		top: 10px;
-      		left: 20px;
-    	}
+		position: relative;
     	.ra-ime{
-    		width:100%;
+			background-color: black;
+			max-width: 100%;
+            height: 250px;
+            object-fit: contain;
     	}
     	.ramen-image-genre{
       		position: absolute;
-      		color: #fff;
+      		color: #d43c37;
       		bottom: 10px;
       		left: 20px;
     	}
@@ -192,22 +189,18 @@
     	}
     }
     .ramen-image{
-      	position: relative;
-      	.ra-ime{
-        	width:100%;
-      	}
-      	.ramen-image-title{
-        	position: absolute;
-        	color: white;
-        	top: 10px;
-        	left: 20px;
-      	}
-      	.ramen-image-genre{
-        	position: absolute;
-        	color: #fff;
-        	bottom: 10px;
-        	left: 20px;
-      	}
+        position: relative;
+        .ra-ime{
+            background-color: black;
+            height: 400px;
+            object-fit: contain;
+        }
+        .ramen-image-genre{
+            position: absolute;
+            color: #d43c37;
+            bottom: 10px;
+            left: 20px;
+        }
     }
     .main-tab{
       	background-color: rgba(238, 29, 36, 0.7);

@@ -22,6 +22,8 @@ class Post < ApplicationRecord
 		likes.find_by(user_id: user_id)
 	end
 
+	
+
 	after_create do
 		post = Post.find_by(id: self.id)
 		hashtags = self.impressions.scan(/[#＃][Ａ-Ｚａ-ｚA-Za-z一-鿆0-9０-９ぁ-ヶｦ-ﾟー]+/)
