@@ -91,3 +91,6 @@ gem "font-awesome-rails"
 group :production do
   gem 'unicorn'
 end
+
+gem 'sqlite3', group: [:development, :test]
+gem 'pg', group: :production
