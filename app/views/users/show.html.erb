@@ -49,7 +49,7 @@
 						<li class="list-group-item" id="list3"><%= post.impressions%></li>
 						<li class="list-group-item ramen-image" id="list4">
 							<%= image_tag post.image, class: 'ra-ime'%>
-							<h3 class="ramen-image-genre"><%= post.genre.genre%></h3>
+							<h3 class="ramen-image-genre"><%= post.genre.genre_name%></h3>
 						</li>
 						<li class="list-group-item" id="list5">
 							<%= link_to "コメント", noodle_path(post.id), method: :get, class: "btn btns"%>
