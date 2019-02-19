@@ -7,9 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 #genre
-genre = ['豚骨', '家系', '二郎', 'まぜそば', 'つけ麺', 'しょうゆ', '味噌', '塩', 'タンメン', 'その他']
-genre.each.with_index(1) do |item, i|
-  Genre.create!(id: i, genre: item)
+genre_name = ['豚骨', '家系', '二郎', 'まぜそば', 'つけ麺', 'しょうゆ', '味噌', '塩', 'タンメン', 'その他']
+genre_name.each.with_index(1) do |item, i|
+  Genre.create!(id: i, genre_name: item)
 end
 
 

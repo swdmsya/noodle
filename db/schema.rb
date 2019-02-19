@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 2019_02_15_083727) do
   end
 
   create_table "genres", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "genre"
+    t.string "genre_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
