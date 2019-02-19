@@ -49,7 +49,7 @@ test:
 #
 production:
   <<: *default
-  database: noodle_production1
+  database: noodle_production2
   username: root
   password: <%= ENV['DATABASE_PASSWORD'] %>
   socket: /var/lib/mysql/mysql.sock
