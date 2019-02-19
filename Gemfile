@@ -88,7 +88,6 @@ gem 'vue-rails-form-builder', '~> 0.8.2'
 
 gem "font-awesome-rails"
 
-gem 'yui-compressor'
 
 group :production do
   gem 'unicorn'
