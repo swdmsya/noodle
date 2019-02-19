@@ -15,7 +15,7 @@ class Post < ApplicationRecord
 
 	#validation
 	validates :user_id, presence: true
-	#validates :impressions, presence: true
+	validates :impressions, presence: true
 	validates :image, presence: true
 
 	def user_liked?(user_id)
