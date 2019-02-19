@@ -8,7 +8,7 @@
         <div class="row">
             <ul class="list-group post col-md-6 col-sm-6 col-xs-6">
                 <li class="list-group-item" id="list1">
-                    <%= link_to user_path(id: post.user.id) do%>
+                    <%= link_to user_path(id: @post.user.id) do%>
                         <%= image_tag @post.user.avatar,:class => "icon", :size => "50x50"%>
                         <%= @post.user.nickname %>
                     <% end%>
