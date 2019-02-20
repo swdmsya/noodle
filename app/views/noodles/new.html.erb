@@ -3,7 +3,7 @@
         <%= image_tag "logo.png", size: "60x60", class: "logo" %>
     </a>
 </div>
-<div id="new" >
+<div id="post_new" >
   <div class="content container">
     <%= form_with(model: [@noodle], url: noodles_path) do |f| %>
       <%= f.label :image, class: 'label-block' do %>
@@ -29,3 +29,20 @@
     <% end %>
   </div>
 </div>
+
+<script>
+  var app = new Vue({
+    el: '#post_new',
+    data:{
+      preview: '',
+    },
+    methods: {
+      handlechange: function(event){
+        var file = event.target.files[0]
+        if (file && file.type.match(/^image\/(png|jpeg)$/)){
+          this.preview = window.URL.createObjectURL(file)
+        }
+      }
+    }
+  })
+</script>
