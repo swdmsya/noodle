@@ -139,8 +139,10 @@ ul{
 
 
             .icon{
-                max-height: 180px;
+                height: 170px;
+                width: 170px;
                 border-radius: 50%;
+                object-fit: cover;
             }
         }
     }
@@ -167,6 +169,7 @@ ul{
         margin-top:20px;
         .icon{
             border-radius: 50%;
+            object-fit: cover;
         }
     }
     .btns{
@@ -227,6 +230,7 @@ ul{
             float: left;
             .icon{
                 border-radius: 50%;
+                object-fit: cover;
             }
             .ra-ime{
                 width:100%;

@@ -64,7 +64,8 @@
     	border-radius: 50%;
     	float:left;
     	width: 65px;
-    	height: 65px;
+		height: 65px;
+		object-fit: cover;
   	}
   	.name{
   		float:left;
@@ -97,7 +98,7 @@
 			background-color: white;
 			max-width: 100%;
             height: 250px;
-            object-fit: contain;
+            object-fit: cover;
     	}
     	.ramen-image-genre{
       		position: absolute;
@@ -183,8 +184,10 @@
     	.profile{
       		margin: auto 0;
       		.icon{
-				max-height: 180px;
+				height: 170px;
+				width:170px;
 				border-radius: 50%;
+				object-fit: cover;
       		}
     	}
     }
@@ -209,7 +212,8 @@
     .list-group{
       	margin-top:20px;
       	.icon{
-        	border-radius: 50%;
+			border-radius: 50%;
+			object-fit: cover;
       	}
     }
     .btns{
