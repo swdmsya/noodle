@@ -12,8 +12,8 @@
         <%= f.file_field :image, class: 'hidden', "v-on:change" => "handlechange"%>
       <% end %>
       <div class="genre-select">
-        <%= f.select :genre_id, [["豚骨",  1], ["家系",  2],["二郎",  3], ["つけ麺",  4],
-               ["味噌",  5], ["醤油", 6],["塩",  7], ["タンメン",  8],["まぜそば",  9],["その他", 10]], "v-model": "ragen" %>
+        <%= f.select :genre_id, [["豚骨",  1], ["家系",  2],["二郎",  3], ["まぜそば",  4],
+               ["つけ麺",  5], ["醤油", 6],["みそ",  7], ["塩",  8],["タンメン",  9],["その他", 10]], "v-model": "ragen" %>
       </div>
       <div class="image-place">
         <div v-if="preview" class="ramen-image">
