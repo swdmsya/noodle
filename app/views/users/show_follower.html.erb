@@ -15,7 +15,7 @@
   	</nav>
 	<% @user.followers.each do |user| %>
   		<div class="col-xs-6 col-md-3">
-    		<div class="thumbnail">
+    		<div class="thumbnail u-ime">
       			<%= image_tag user.avatar,class: "icon"%>
 				<div class="caption">
 					<h3><%= user.nickname %>さん</h3>
