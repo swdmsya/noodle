@@ -1,54 +1,52 @@
 <div class="col-md-3 col-sm-3 col-xs-3 top">
-      <% if user_signed_in?%>
-      <div class="thumbnail profile">
-          <%= image_tag current_user.avatar,:class => "icon" %>
-        <div class="caption">
-          <% @user ||= current_user %>
-          <h3><%= @user.nickname%><span>さん</span></h3>
-
-          <p><span>投稿数：</span>
-              <strong class="stat">
-                <%= Post.where(user_id: @user.id).count %>
-              </strong>
-          </p>
-          
-          <p><span>フォロー数：</span>
-            <a href="<%= following_user_path(@user) %>">
-              <strong id="following" class="stat">
-                <%= @user.followings.count %>人
-              </strong>
-            </a>
-          </p>
-          <p><span>フォロワー数：</span>
-            <a href="<%= followers_user_path(@user) %>">
-              <strong id="followers" class="stat">
-                <%= @user.followers.count %>人
-              </strong>
-            </a>
-          </p>
-          <ul>
-            <li>
-              <a href="users/<%=current_user.id%>" class="btn btns">マイページ</a>
-              <a href="noodles/new" class="btn  btns">投稿する</a>
-            </li>
-            <li>
-              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn"%>
-            </li>
-          </ul>
-        </div><!-- /.caption -->
-      </div><!-- /.thumbnail -->
-      <% else%>
-      <div class="thumbnail profile">
-          <%= image_tag "logo.png",:class => "icon" %>
-        <div class="caption">
-          <h3>ログインしよう！</h3>
-          <p><%= link_to "新規登録", new_user_registration_path, class: "btn btns" %>
-             <%= link_to "ログイン", user_session_path, method: :post, class: "btn btns" %></p>
-        </div><!-- /.caption -->
-      </div><!-- /.thumbnail -->
+    <% if user_signed_in?%>
+        <div class="thumbnail profile">
+            <%= image_tag current_user.avatar,:class => "icon" %>
+            <div class="caption">
+                <% @user ||= current_user %>
+                <h3><%= @user.nickname%><span>さん</span></h3>
+                <p><span>投稿数：</span>
+                    <strong class="stat">
+                        <%= Post.where(user_id: @user.id).count %>
+                    </strong>
+                </p>
+                <p><span>フォロー数：</span>
+                    <a href="<%= following_user_path(@user) %>">
+                        <strong id="following" class="stat">
+                            <%= @user.followings.count %>人
+                        </strong>
+                    </a>
+                </p>
+                <p><span>フォロワー数：</span>
+                    <a href="<%= followers_user_path(@user) %>">
+                        <strong id="followers" class="stat">
+                            <%= @user.followers.count %>人
+                        </strong>
+                    </a>
+                </p>
+                <ul>
+                    <li>
+                        <a href="users/<%=current_user.id%>" class="btn btns">マイページ</a>
+                        <a href="noodles/new" class="btn  btns">投稿する</a>
+                    </li>
+                    <li>
+                        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn"%>
+                    </li>
+                </ul>
+            </div><!-- /.caption -->
+        </div><!-- /.thumbnail -->
+    <% else%>
+        <div class="thumbnail profile">
+            <%= image_tag "logo.png",:class => "icon" %>
+            <div class="caption">
+                <h3>ログインしよう！</h3>
+                <p><%= link_to "新規登録", new_user_registration_path, class: "btn btns" %>
+                <%= link_to "ログイン", user_session_path, method: :post, class: "btn btns" %></p>
+            </div><!-- /.caption -->
+        </div><!-- /.thumbnail -->
       <%end%>
       <!-- 画面幅が991pxいかになったらプロフィールにしたに表示-->
-      <div class="min_rank">
+    <div class="min_rank">
         <%= render partial: 'shared/ranking' %>
-      </div>
     </div>
+</div>
